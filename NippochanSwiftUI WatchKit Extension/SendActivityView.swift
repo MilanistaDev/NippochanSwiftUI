@@ -14,7 +14,7 @@ struct SendActivityView: View {
         [("出社", "icn_company"), ("作業開始", "icn_company"),
          ("お昼休憩", "icn_company"), ("作業再開", "icn_company"),
          ("離席", "icn_company"), ("作業終了", "icn_company"),
-         ("早退", "icn_company"), ("Add Activity", "icn_company")]
+         ("早退", "icn_company"), ("Settings", "icn_settings")]
 
     @State var isShown = false
 
@@ -41,7 +41,7 @@ struct SendActivityView: View {
 
                 }
             } else {
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: SettingsView()) {
                     VStack(alignment: .leading) {
                         Image(self.activityData[number].image)
                             .resizable()
