@@ -19,6 +19,7 @@
 		FD0ECA0C22E2A34D00DCB142 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA0B22E2A34D00DCB142 /* ComplicationController.swift */; };
 		FD0ECA0E22E2A34E00DCB142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA0D22E2A34E00DCB142 /* Assets.xcassets */; };
 		FD0ECA1122E2A34E00DCB142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */; };
+		FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD0ECA1222E2A34E00DCB142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0ECA0122E2A34D00DCB142 /* ContentView.swift */,
+				FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */,
 				FD0ECA0322E2A34D00DCB142 /* HostingController.swift */,
 				FD0ECA0522E2A34D00DCB142 /* ExtensionDelegate.swift */,
 				FD0ECA0722E2A34D00DCB142 /* NotificationController.swift */,
@@ -278,6 +281,7 @@
 				FD0ECA0422E2A34D00DCB142 /* HostingController.swift in Sources */,
 				FD0ECA0222E2A34D00DCB142 /* ContentView.swift in Sources */,
 				FD0ECA0822E2A34D00DCB142 /* NotificationController.swift in Sources */,
+				FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */,
 				FD0ECA0622E2A34D00DCB142 /* ExtensionDelegate.swift in Sources */,
 				FD0ECA0A22E2A34D00DCB142 /* NotificationView.swift in Sources */,
 				FD0ECA0C22E2A34D00DCB142 /* ComplicationController.swift in Sources */,
