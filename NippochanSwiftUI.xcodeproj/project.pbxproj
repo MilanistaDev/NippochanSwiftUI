@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FD0D12AB22E308FA0085800C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D12AA22E308FA0085800C /* SettingsView.swift */; };
+		FD0D12AD22E32C4E0085800C /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D12AC22E32C4E0085800C /* AppInfoView.swift */; };
 		FD0EC9EE22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FD0EC9ED22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FD0EC9F422E2A34B00DCB142 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC9F222E2A34B00DCB142 /* Interface.storyboard */; };
 		FD0EC9F622E2A34D00DCB142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC9F522E2A34D00DCB142 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		FD0D12AA22E308FA0085800C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = "../../../../../System/Volumes/Data/Users/milanista/Git/NippochanSwiftUI/NippochanSwiftUI WatchKit Extension/SettingsView.swift"; sourceTree = "<group>"; };
+		FD0D12AC22E32C4E0085800C /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppInfoView.swift; path = "../../../../../System/Volumes/Data/Users/milanista/Git/NippochanSwiftUI/NippochanSwiftUI WatchKit Extension/AppInfoView.swift"; sourceTree = "<group>"; };
 		FD0EC9E922E2A34B00DCB142 /* NippochanSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NippochanSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0EC9ED22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NippochanSwiftUI WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0EC9F322E2A34B00DCB142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */,
 				FD0D12AA22E308FA0085800C /* SettingsView.swift */,
+				FD0D12AC22E32C4E0085800C /* AppInfoView.swift */,
 				FD0ECA0322E2A34D00DCB142 /* HostingController.swift */,
 				FD0ECA0522E2A34D00DCB142 /* ExtensionDelegate.swift */,
 				FD0ECA0722E2A34D00DCB142 /* NotificationController.swift */,
@@ -282,6 +285,7 @@
 				FD0ECA0422E2A34D00DCB142 /* HostingController.swift in Sources */,
 				FD0ECA0822E2A34D00DCB142 /* NotificationController.swift in Sources */,
 				FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */,
+				FD0D12AD22E32C4E0085800C /* AppInfoView.swift in Sources */,
 				FD0ECA0622E2A34D00DCB142 /* ExtensionDelegate.swift in Sources */,
 				FD0ECA0A22E2A34D00DCB142 /* NotificationView.swift in Sources */,
 				FD0ECA0C22E2A34D00DCB142 /* ComplicationController.swift in Sources */,

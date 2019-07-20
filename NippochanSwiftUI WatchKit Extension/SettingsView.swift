@@ -25,7 +25,7 @@ struct SettingsView: View {
                     .font(.subheadline)
                 }
             } else {
-                NavigationLink(destination: SendActivityView()) {
+                NavigationLink(destination: AppInfoView()) {
                     Text(self.cellName[number])
                     .font(.subheadline)
                 }
