@@ -15,11 +15,14 @@ struct SendActivityView: View {
          ("お昼休憩", "icn_company"), ("作業再開", "icn_company"),
          ("離席", "icn_company"), ("作業終了", "icn_company"),
          ("早退", "icn_company"), ("Add Activity", "icn_company")]
+
     @State var isShown = false
 
     var body: some View {
-        VStack(alignment: .leading) {
-            List(0..<self.activityData.count) { number in
+        List(0..<self.activityData.count) { number in
+            Button(action: {
+                self.isShown = true
+            }) {
                 VStack(alignment: .leading) {
                     Image(self.activityData[number].image)
                         .resizable()
@@ -31,9 +34,12 @@ struct SendActivityView: View {
                         .padding(Edge.Set.bottom, 16.0)
                         .padding(Edge.Set.leading, 18.0)
                 }
+                .alert(isPresented: self.$isShown) { () -> Alert in
+                    Alert(title: Text("登録完了"), message: Text("アクティビティを登録しました！"), dismissButton: Alert.Button.default(Text("OK")))
+                }
             }
-            .listStyle(.carousel)
         }
+        .listStyle(.carousel)
         .navigationBarTitle(Text("Activity"))
     }
 }
