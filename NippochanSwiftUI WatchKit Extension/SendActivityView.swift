@@ -36,7 +36,7 @@ struct SendActivityView: View {
                             .padding(Edge.Set.leading, 18.0)
                     }
                     .alert(isPresented: self.$isShown) { () -> Alert in
-                        Alert(title: Text("登録完了"), message: Text("アクティビティを登録しました！"), dismissButton: Alert.Button.default(Text("OK")))
+                        Alert(title: Text("登録完了"), message: Text("アクティビティを投稿しました！"), dismissButton: Alert.Button.default(Text("OK")))
                     }
 
                 }
