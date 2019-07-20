@@ -10,13 +10,27 @@ import SwiftUI
 
 struct SendActivityView: View {
 
-    let activityData: [String] = ["出社", "作業開始", "お昼休憩", "作業再開", "離席", "作業終了", "早退", "Add Activity"]
+    let activityData: [(name: String, image: String)] =
+        [("出社", "icn_company"), ("作業開始", "icn_company"),
+         ("お昼休憩", "icn_company"), ("作業再開", "icn_company"),
+         ("離席", "icn_company"), ("作業終了", "icn_company"),
+         ("早退", "icn_company"), ("Add Activity", "icn_company")]
     @State var isShown = false
 
     var body: some View {
         VStack(alignment: .leading) {
             List(0..<self.activityData.count) { number in
-                Text(self.activityData[number])
+                VStack(alignment: .leading) {
+                    Image(self.activityData[number].image)
+                        .resizable()
+                        .frame(width: 60.0, height: 60.0, alignment: .leading)
+                        .padding(Edge.Set.top, 16.0)
+                        .padding(Edge.Set.leading, 16.0)
+                    Text(self.activityData[number].name)
+                        .font(.headline)
+                        .padding(Edge.Set.bottom, 16.0)
+                        .padding(Edge.Set.leading, 18.0)
+                }
             }
             .listStyle(.carousel)
         }
