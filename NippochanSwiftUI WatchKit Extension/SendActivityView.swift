@@ -20,22 +20,39 @@ struct SendActivityView: View {
 
     var body: some View {
         List(0..<self.activityData.count) { number in
-            Button(action: {
-                self.isShown = true
-            }) {
-                VStack(alignment: .leading) {
-                    Image(self.activityData[number].image)
-                        .resizable()
-                        .frame(width: 60.0, height: 60.0, alignment: .leading)
-                        .padding(Edge.Set.top, 16.0)
-                        .padding(Edge.Set.leading, 16.0)
-                    Text(self.activityData[number].name)
-                        .font(.headline)
-                        .padding(Edge.Set.bottom, 16.0)
-                        .padding(Edge.Set.leading, 18.0)
+            if (number != self.activityData.count - 1) {
+                Button(action: {
+                    self.isShown = true
+                }) {
+                    VStack(alignment: .leading) {
+                        Image(self.activityData[number].image)
+                            .resizable()
+                            .frame(width: 60.0, height: 60.0, alignment: .leading)
+                            .padding(Edge.Set.top, 16.0)
+                            .padding(Edge.Set.leading, 16.0)
+                        Text(self.activityData[number].name)
+                            .font(.headline)
+                            .padding(Edge.Set.bottom, 16.0)
+                            .padding(Edge.Set.leading, 18.0)
+                    }
+                    .alert(isPresented: self.$isShown) { () -> Alert in
+                        Alert(title: Text("登録完了"), message: Text("アクティビティを登録しました！"), dismissButton: Alert.Button.default(Text("OK")))
+                    }
+
                 }
-                .alert(isPresented: self.$isShown) { () -> Alert in
-                    Alert(title: Text("登録完了"), message: Text("アクティビティを登録しました！"), dismissButton: Alert.Button.default(Text("OK")))
+            } else {
+                NavigationLink(destination: ContentView()) {
+                    VStack(alignment: .leading) {
+                        Image(self.activityData[number].image)
+                            .resizable()
+                            .frame(width: 60.0, height: 60.0, alignment: .leading)
+                            .padding(Edge.Set.top, 16.0)
+                            .padding(Edge.Set.leading, 16.0)
+                        Text(self.activityData[number].name)
+                            .font(.headline)
+                            .padding(Edge.Set.bottom, 16.0)
+                            .padding(Edge.Set.leading, 18.0)
+                    }
                 }
             }
         }
