@@ -9,8 +9,27 @@
 import SwiftUI
 
 struct AddActivityView: View {
+    @State var isShown = false
+
     var body: some View {
-        Text("Add Activity")
+        VStack(alignment: .leading) {
+            Text("Input new Activity")
+                .font(.headline)
+            TextField(.constant("出社"))
+                    .foregroundColor(.gray)
+            Text("Current: 10")
+            Spacer()
+            Button(action: {
+                self.isShown = true
+            }) {
+                Text("Register")
+            }.alert(isPresented: $isShown, content: {
+                    Alert(title: Text("Success"),
+                          message: Text("Registered new Activity."),
+                          dismissButton: Alert.Button.default(Text("OK")))
+                        })
+                }
+                .navigationBarTitle(Text("Add Activity"))
     }
 }
 
