@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD0EC9EE22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FD0EC9ED22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FD0EC9F422E2A34B00DCB142 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC9F222E2A34B00DCB142 /* Interface.storyboard */; };
+		FD0EC9F622E2A34D00DCB142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0EC9F522E2A34D00DCB142 /* Assets.xcassets */; };
+		FD0EC9FD22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FD0EC9FC22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FD0ECA0222E2A34D00DCB142 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA0122E2A34D00DCB142 /* ContentView.swift */; };
+		FD0ECA0422E2A34D00DCB142 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA0322E2A34D00DCB142 /* HostingController.swift */; };
+		FD0ECA0622E2A34D00DCB142 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA0522E2A34D00DCB142 /* ExtensionDelegate.swift */; };
+		FD0ECA0822E2A34D00DCB142 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA0722E2A34D00DCB142 /* NotificationController.swift */; };
+		FD0ECA0A22E2A34D00DCB142 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA0922E2A34D00DCB142 /* NotificationView.swift */; };
+		FD0ECA0C22E2A34D00DCB142 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA0B22E2A34D00DCB142 /* ComplicationController.swift */; };
+		FD0ECA0E22E2A34E00DCB142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA0D22E2A34E00DCB142 /* Assets.xcassets */; };
+		FD0ECA1122E2A34E00DCB142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD0EC9EF22E2A34B00DCB142 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD0EC9E322E2A34B00DCB142 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD0EC9EC22E2A34B00DCB142;
+			remoteInfo = "NippochanSwiftUI WatchKit App";
+		};
+		FD0EC9FE22E2A34D00DCB142 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD0EC9E322E2A34B00DCB142 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD0EC9FB22E2A34D00DCB142;
+			remoteInfo = "NippochanSwiftUI WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD0ECA1922E2A34E00DCB142 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FD0EC9FD22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD0ECA1D22E2A34E00DCB142 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FD0EC9EE22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FD0EC9E922E2A34B00DCB142 /* NippochanSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NippochanSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0EC9ED22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NippochanSwiftUI WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0EC9F322E2A34B00DCB142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FD0EC9F522E2A34D00DCB142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD0EC9F722E2A34D00DCB142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD0EC9FC22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NippochanSwiftUI WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0ECA0122E2A34D00DCB142 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FD0ECA0322E2A34D00DCB142 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		FD0ECA0522E2A34D00DCB142 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		FD0ECA0722E2A34D00DCB142 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FD0ECA0922E2A34D00DCB142 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		FD0ECA0B22E2A34D00DCB142 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		FD0ECA0D22E2A34E00DCB142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD0ECA1222E2A34E00DCB142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD0EC9F922E2A34D00DCB142 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD0EC9E222E2A34B00DCB142 = {
+			isa = PBXGroup;
+			children = (
+				FD0EC9F122E2A34B00DCB142 /* NippochanSwiftUI WatchKit App */,
+				FD0ECA0022E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */,
+				FD0EC9EA22E2A34B00DCB142 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD0EC9EA22E2A34B00DCB142 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD0EC9E922E2A34B00DCB142 /* NippochanSwiftUI.app */,
+				FD0EC9ED22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app */,
+				FD0EC9FC22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD0EC9F122E2A34B00DCB142 /* NippochanSwiftUI WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FD0EC9F222E2A34B00DCB142 /* Interface.storyboard */,
+				FD0EC9F522E2A34D00DCB142 /* Assets.xcassets */,
+				FD0EC9F722E2A34D00DCB142 /* Info.plist */,
+			);
+			path = "NippochanSwiftUI WatchKit App";
+			sourceTree = "<group>";
+		};
+		FD0ECA0022E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FD0ECA0122E2A34D00DCB142 /* ContentView.swift */,
+				FD0ECA0322E2A34D00DCB142 /* HostingController.swift */,
+				FD0ECA0522E2A34D00DCB142 /* ExtensionDelegate.swift */,
+				FD0ECA0722E2A34D00DCB142 /* NotificationController.swift */,
+				FD0ECA0922E2A34D00DCB142 /* NotificationView.swift */,
+				FD0ECA0B22E2A34D00DCB142 /* ComplicationController.swift */,
+				FD0ECA0D22E2A34E00DCB142 /* Assets.xcassets */,
+				FD0ECA1222E2A34E00DCB142 /* Info.plist */,
+				FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */,
+				FD0ECA0F22E2A34E00DCB142 /* Preview Content */,
+			);
+			path = "NippochanSwiftUI WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		FD0ECA0F22E2A34E00DCB142 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD0EC9E822E2A34B00DCB142 /* NippochanSwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD0ECA1E22E2A34E00DCB142 /* Build configuration list for PBXNativeTarget "NippochanSwiftUI" */;
+			buildPhases = (
+				FD0EC9E722E2A34B00DCB142 /* Resources */,
+				FD0ECA1D22E2A34E00DCB142 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD0EC9F022E2A34B00DCB142 /* PBXTargetDependency */,
+			);
+			name = NippochanSwiftUI;
+			productName = NippochanSwiftUI;
+			productReference = FD0EC9E922E2A34B00DCB142 /* NippochanSwiftUI.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		FD0EC9EC22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD0ECA1A22E2A34E00DCB142 /* Build configuration list for PBXNativeTarget "NippochanSwiftUI WatchKit App" */;
+			buildPhases = (
+				FD0EC9EB22E2A34B00DCB142 /* Resources */,
+				FD0ECA1922E2A34E00DCB142 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD0EC9FF22E2A34D00DCB142 /* PBXTargetDependency */,
+			);
+			name = "NippochanSwiftUI WatchKit App";
+			productName = "NippochanSwiftUI WatchKit App";
+			productReference = FD0EC9ED22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FD0EC9FB22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD0ECA1622E2A34E00DCB142 /* Build configuration list for PBXNativeTarget "NippochanSwiftUI WatchKit Extension" */;
+			buildPhases = (
+				FD0EC9F822E2A34D00DCB142 /* Sources */,
+				FD0EC9F922E2A34D00DCB142 /* Frameworks */,
+				FD0EC9FA22E2A34D00DCB142 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NippochanSwiftUI WatchKit Extension";
+			productName = "NippochanSwiftUI WatchKit Extension";
+			productReference = FD0EC9FC22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD0EC9E322E2A34B00DCB142 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Takuya Aso";
+				TargetAttributes = {
+					FD0EC9E822E2A34B00DCB142 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					FD0EC9EC22E2A34B00DCB142 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					FD0EC9FB22E2A34D00DCB142 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = FD0EC9E622E2A34B00DCB142 /* Build configuration list for PBXProject "NippochanSwiftUI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD0EC9E222E2A34B00DCB142;
+			productRefGroup = FD0EC9EA22E2A34B00DCB142 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD0EC9E822E2A34B00DCB142 /* NippochanSwiftUI */,
+				FD0EC9EC22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App */,
+				FD0EC9FB22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD0EC9E722E2A34B00DCB142 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD0EC9EB22E2A34B00DCB142 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD0EC9F622E2A34D00DCB142 /* Assets.xcassets in Resources */,
+				FD0EC9F422E2A34B00DCB142 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD0EC9FA22E2A34D00DCB142 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD0ECA1122E2A34E00DCB142 /* Preview Assets.xcassets in Resources */,
+				FD0ECA0E22E2A34E00DCB142 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD0EC9F822E2A34D00DCB142 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD0ECA0422E2A34D00DCB142 /* HostingController.swift in Sources */,
+				FD0ECA0222E2A34D00DCB142 /* ContentView.swift in Sources */,
+				FD0ECA0822E2A34D00DCB142 /* NotificationController.swift in Sources */,
+				FD0ECA0622E2A34D00DCB142 /* ExtensionDelegate.swift in Sources */,
+				FD0ECA0A22E2A34D00DCB142 /* NotificationView.swift in Sources */,
+				FD0ECA0C22E2A34D00DCB142 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD0EC9F022E2A34B00DCB142 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD0EC9EC22E2A34B00DCB142 /* NippochanSwiftUI WatchKit App */;
+			targetProxy = FD0EC9EF22E2A34B00DCB142 /* PBXContainerItemProxy */;
+		};
+		FD0EC9FF22E2A34D00DCB142 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD0EC9FB22E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */;
+			targetProxy = FD0EC9FE22E2A34D00DCB142 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD0EC9F222E2A34B00DCB142 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD0EC9F322E2A34B00DCB142 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD0ECA1422E2A34E00DCB142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD0ECA1522E2A34E00DCB142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD0ECA1722E2A34E00DCB142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NippochanSwiftUI WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "NippochanSwiftUI WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		FD0ECA1822E2A34E00DCB142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NippochanSwiftUI WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "NippochanSwiftUI WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		FD0ECA1B22E2A34E00DCB142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
+				IBSC_MODULE = NippochanSwiftUI_WatchKit_Extension;
+				INFOPLIST_FILE = "NippochanSwiftUI WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		FD0ECA1C22E2A34E00DCB142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
+				IBSC_MODULE = NippochanSwiftUI_WatchKit_Extension;
+				INFOPLIST_FILE = "NippochanSwiftUI WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		FD0ECA1F22E2A34E00DCB142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FD0ECA2022E2A34E00DCB142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD0EC9E622E2A34B00DCB142 /* Build configuration list for PBXProject "NippochanSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD0ECA1422E2A34E00DCB142 /* Debug */,
+				FD0ECA1522E2A34E00DCB142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD0ECA1622E2A34E00DCB142 /* Build configuration list for PBXNativeTarget "NippochanSwiftUI WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD0ECA1722E2A34E00DCB142 /* Debug */,
+				FD0ECA1822E2A34E00DCB142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD0ECA1A22E2A34E00DCB142 /* Build configuration list for PBXNativeTarget "NippochanSwiftUI WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD0ECA1B22E2A34E00DCB142 /* Debug */,
+				FD0ECA1C22E2A34E00DCB142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD0ECA1E22E2A34E00DCB142 /* Build configuration list for PBXNativeTarget "NippochanSwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD0ECA1F22E2A34E00DCB142 /* Debug */,
+				FD0ECA2022E2A34E00DCB142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD0EC9E322E2A34B00DCB142 /* Project object */;
+}
