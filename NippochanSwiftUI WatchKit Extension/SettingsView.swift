@@ -15,12 +15,12 @@ struct SettingsView: View {
     var body: some View {
         List(0..<self.cellName.count) { number in
             if (number == 0) {
-                NavigationLink(destination: SendActivityView()) {
+                NavigationLink(destination: AddActivityView()) {
                     Text(self.cellName[number])
                     .font(.subheadline)
                 }
             } else if (number == 1) {
-                NavigationLink(destination: SendActivityView()) {
+                NavigationLink(destination: SlackSettingsView()) {
                     Text(self.cellName[number])
                     .font(.subheadline)
                 }
