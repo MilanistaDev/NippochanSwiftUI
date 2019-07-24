@@ -19,7 +19,7 @@ struct SendActivityView: View {
     @State var isShown = false
 
     var body: some View {
-        List(0..<self.activityData2.count) { number in
+        List(0..<self.activityData.count) { number in
             if (number != self.activityData.count - 1) {
                 Button(action: {
                     self.isShown = true
