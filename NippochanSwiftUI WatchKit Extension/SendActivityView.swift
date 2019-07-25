@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SendActivityView: View {
 
-    let activityData: [(name: String, image: String)] =
+    @State var activityData: [(name: String, image: String)] =
         [("出社", "🏢"), ("作業開始", "👨‍💻"),
          ("お昼休憩", "🍖"), ("作業再開", "👩‍💻"),
          ("離席", "☕️"), ("作業終了", "🍻"),
@@ -19,44 +19,49 @@ struct SendActivityView: View {
     @State var isShown = false
 
     var body: some View {
-        List(0..<self.activityData.count) { number in
-            if (number != self.activityData.count - 1) {
-                Button(action: {
-                    self.isShown = true
-                }) {
-                    VStack(alignment: .leading) {
-                        Text(self.activityData[number].image)
-                            .font(.title)
-                            .padding(Edge.Set.top, 16.0)
-                            .padding(Edge.Set.leading, 16.0)
-                        Text(self.activityData[number].name)
-                            .font(.headline)
-                            .padding(Edge.Set.bottom, 16.0)
-                            .padding(Edge.Set.leading, 18.0)
+        List {
+            ForEach(self.activityData, id: \.name){ activity in
+                if activity.name == "Settings" {
+                    NavigationLink(destination: SettingsView()) {
+                        ActivityCarouselView(activity: activity)
                     }
-                    .alert(isPresented: self.$isShown) { () -> Alert in
-                        Alert(title: Text("登録完了"),
-                              message: Text("アクティビティを投稿しました！"),
-                              dismissButton: Alert.Button.default(Text("OK")))
+                } else {
+                    Button(action: {
+                        self.isShown = true
+                    }) {
+                        ActivityCarouselView(activity: activity)
+                        .alert(isPresented: self.$isShown) { () -> Alert in
+                            Alert(title: Text("登録完了"),
+                                  message: Text("アクティビティを投稿しました！"),
+                                  dismissButton: Alert.Button.default(Text("OK")))
+                        }
                     }
                 }
-            } else {
-                NavigationLink(destination: SettingsView()) {
-                    VStack(alignment: .leading) {
-                        Text(self.activityData[number].image)
-                            .font(.title)
-                            .padding(Edge.Set.top, 16.0)
-                            .padding(Edge.Set.leading, 16.0)
-                        Text(self.activityData[number].name)
-                            .font(.headline)
-                            .padding(Edge.Set.bottom, 16.0)
-                            .padding(Edge.Set.leading, 18.0)
-                    }
-                }
+            }
+            .onDelete { index in
+                self.activityData.remove(at: index.first!)
             }
         }
         .listStyle(.carousel)
         .navigationBarTitle(Text("Activity"))
+    }
+}
+
+struct ActivityCarouselView: View {
+
+    let activity: (name: String, image: String)
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(activity.image)
+                .font(.title)
+                .padding(Edge.Set.top, 16.0)
+                .padding(Edge.Set.leading, 16.0)
+            Text(activity.name)
+                .font(.headline)
+                .padding(Edge.Set.bottom, 16.0)
+                .padding(Edge.Set.leading, 18.0)
+        }
     }
 }
 
