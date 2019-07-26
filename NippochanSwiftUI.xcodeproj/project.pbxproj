@@ -88,6 +88,10 @@
 		FD0ECA1222E2A34E00DCB142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendActivityView.swift; sourceTree = "<group>"; };
+		FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
+		FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingsView.swift; sourceTree = "<group>"; };
+		FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +137,7 @@
 		FD0ECA0022E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */,
+				FDCA26D722EB0A2500F2EDDF /* View */,
 				FD0D12AA22E308FA0085800C /* SettingsView.swift */,
 				FD0D12AE22E335750085800C /* AddActivityView.swift */,
 				FD0D12B222E336090085800C /* SlackSettingsView.swift */,
@@ -157,6 +161,18 @@
 				FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FDCA26D722EB0A2500F2EDDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */,
+				FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */,
+				FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */,
+				FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */,
+				FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
