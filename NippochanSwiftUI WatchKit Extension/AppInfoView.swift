@@ -13,8 +13,18 @@ struct AppInfoView: View {
     var body: some View {
         VStack(alignment: .center) {
             Text(appVersion ?? "なし")
-            Text("Takuya Aso, 2019")
+                .font(.title)
+                .padding(Edge.Set.top, 30.0)
+            Spacer()
+            Text("NippochanSwiftUI, 2019")
+                .font(.footnote)
+                .foregroundColor(.green)
+            Text("Takuya Aso")
+                .font(.footnote)
+                .foregroundColor(.green)
+                .padding(Edge.Set.bottom, 8.0)
         }
+        .navigationBarTitle("App Version")
     }
 }
 
