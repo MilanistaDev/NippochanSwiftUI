@@ -53,10 +53,18 @@ struct ActivityCarouselView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(activity.image)
-                .font(.title)
-                .padding(Edge.Set.top, 16.0)
-                .padding(Edge.Set.leading, 16.0)
+            HStack {
+                Text(activity.image)
+                    .font(.largeTitle)
+                    .padding(Edge.Set.top, 16.0)
+                    .padding(Edge.Set.leading, 16.0)
+                Spacer()
+                Image("ic_menu")
+                    .resizable()
+                    .frame(width: 20.0, height: 20.0, alignment: .center)
+                    .padding(Edge.Set.trailing, 8.0)
+                    .scaledToFit()
+            }
             Text(activity.name)
                 .font(.headline)
                 .padding(Edge.Set.bottom, 16.0)
