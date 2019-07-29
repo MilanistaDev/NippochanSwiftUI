@@ -10,12 +10,13 @@ import SwiftUI
 
 struct AddActivityView: View {
     @State var isShown = false
+    @State var activityName: String = ""
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("Input new Activity")
                 .font(.headline)
-            TextField(.constant("出社"))
+            TextField("出社", text: $activityName)
                     .foregroundColor(.gray)
             Text("Current: 10")
             Spacer()
