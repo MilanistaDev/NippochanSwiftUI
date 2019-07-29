@@ -10,31 +10,27 @@ import SwiftUI
 
 struct SendActivityView: View {
 
-    @State var activityData: [(name: String, image: String)] =
-        [("出社", "🏢"), ("作業開始", "👨‍💻"),
-         ("お昼休憩", "🍖"), ("作業再開", "👩‍💻"),
-         ("離席", "☕️"), ("作業終了", "🍻"),
-         ("早退", "🕞"), ("Settings", "✍️")]
-
-    @State var isShown = false
+    @State var activityData: [ActivityModel] = [
+        ActivityModel(name: "出社", emoji: "🏢", deletable: true),
+        ActivityModel(name: "作業開始", emoji: "👨‍💻", deletable: true),
+        ActivityModel(name: "お昼休憩", emoji: "🍖", deletable: true),
+        ActivityModel(name: "作業再開", emoji: "👩‍💻", deletable: true),
+        ActivityModel(name: "離席", emoji: "☕️", deletable: true),
+        ActivityModel(name: "作業終了", emoji: "🍻", deletable: true),
+        ActivityModel(name: "早退", emoji: "🕞", deletable: true),
+        ActivityModel(name: "Settings", emoji: "✍️", deletable: false)
+    ]
 
     var body: some View {
         List {
-            ForEach(self.activityData, id: \.name){ activity in
+            ForEach(self.activityData){ activity in
                 if activity.name == "Settings" {
                     NavigationLink(destination: SettingsView()) {
                         ActivityCarouselView(activity: activity)
                     }
                 } else {
-                    Button(action: {
-                        self.isShown = true
-                    }) {
+                    NavigationLink(destination: SlackSettingsView()) {
                         ActivityCarouselView(activity: activity)
-                        .alert(isPresented: self.$isShown) { () -> Alert in
-                            Alert(title: Text("登録完了"),
-                                  message: Text("アクティビティを投稿しました！"),
-                                  dismissButton: Alert.Button.default(Text("OK")))
-                        }
                     }
                 }
             }

@@ -10,12 +10,12 @@ import SwiftUI
 
 struct ActivityCarouselView: View {
 
-    let activity: (name: String, image: String)
+    let activity: ActivityModel
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(activity.image)
+                Text(activity.emoji)
                     .font(.largeTitle)
                     .padding(Edge.Set.top, 16.0)
                     .padding(Edge.Set.leading, 16.0)
@@ -37,7 +37,7 @@ struct ActivityCarouselView: View {
 #if DEBUG
 struct ActivityCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityCarouselView(activity: (name: "サッカー", image: "⚽️"))
+        ActivityCarouselView(activity: ActivityModel(name: "サッカー", emoji: "⚽️", deletable: true))
     }
 }
 #endif
