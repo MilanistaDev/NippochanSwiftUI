@@ -19,6 +19,7 @@
 		FD0ECA0E22E2A34E00DCB142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA0D22E2A34E00DCB142 /* Assets.xcassets */; };
 		FD0ECA1122E2A34E00DCB142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */; };
 		FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */; };
+		FD85DD2922EECA2B00A18FE7 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */; };
 		FDCA26DC22EB0C7000F2EDDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */; };
 		FDCA26DD22EB0C8700F2EDDF /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */; };
 		FDCA26DE22EB0C8B00F2EDDF /* SlackSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */; };
@@ -85,6 +86,7 @@
 		FD0ECA1222E2A34E00DCB142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendActivityView.swift; sourceTree = "<group>"; };
+		FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = "../../../../../../System/Volumes/Data/Users/milanista/Git/NippochanSwiftUI/NippochanSwiftUI WatchKit Extension/Model/ActivityModel.swift"; sourceTree = "<group>"; };
 		FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingsView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		FD0ECA0022E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FD85DD2522EEC8CC00A18FE7 /* Model */,
 				FDCA26D722EB0A2500F2EDDF /* View */,
 				FD0ECA0322E2A34D00DCB142 /* HostingController.swift */,
 				FD0ECA0522E2A34D00DCB142 /* ExtensionDelegate.swift */,
@@ -155,6 +158,14 @@
 				FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD85DD2522EEC8CC00A18FE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FDCA26D722EB0A2500F2EDDF /* View */ = {
@@ -306,6 +317,7 @@
 				FDCA26DF22EB0C8E00F2EDDF /* AppInfoView.swift in Sources */,
 				FD0ECA0822E2A34D00DCB142 /* NotificationController.swift in Sources */,
 				FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */,
+				FD85DD2922EECA2B00A18FE7 /* ActivityModel.swift in Sources */,
 				FD0ECA0622E2A34D00DCB142 /* ExtensionDelegate.swift in Sources */,
 				FD0ECA0A22E2A34D00DCB142 /* NotificationView.swift in Sources */,
 				FD0ECA0C22E2A34D00DCB142 /* ComplicationController.swift in Sources */,
