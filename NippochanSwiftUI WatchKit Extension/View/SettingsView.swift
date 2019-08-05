@@ -10,25 +10,16 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    let cellName = ["Add Activity", "Slack Settings", "App Version"]
-
     var body: some View {
-        List(0..<self.cellName.count) { number in
-            if (number == 0) {
-                NavigationLink(destination: AddActivityView()) {
-                    Text(self.cellName[number])
-                    .font(.subheadline)
-                }
-            } else if (number == 1) {
-                NavigationLink(destination: SlackSettingsView()) {
-                    Text(self.cellName[number])
-                    .font(.subheadline)
-                }
-            } else {
-                NavigationLink(destination: AppInfoView()) {
-                    Text(self.cellName[number])
-                    .font(.subheadline)
-                }
+        VStack {
+            NavigationLink(destination: AddActivityView()) {
+                Text("Add Activity").font(.subheadline)
+            }
+            NavigationLink(destination: SlackSettingsView()) {
+                Text("Slack Settings").font(.subheadline)
+            }
+            NavigationLink(destination: AppInfoView()) {
+                Text("App Version").font(.subheadline)
             }
         }
         .navigationBarTitle(Text("Settings"))
