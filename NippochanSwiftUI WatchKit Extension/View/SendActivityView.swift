@@ -38,7 +38,7 @@ struct SendActivityView: View {
                 self.activityData.remove(at: index.first!)
             }
         }
-        .listStyle(.carousel)
+        .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Activity"))
     }
 }
