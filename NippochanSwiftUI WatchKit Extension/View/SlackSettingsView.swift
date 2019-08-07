@@ -8,9 +8,36 @@
 
 import SwiftUI
 
+enum SettingType {
+    case webhook
+    case github
+    case favColor
+}
+
 struct SlackSettingsView: View {
+
+    @State private var webHookUrl: String = ""
+    @State private var gitHubLink: String = ""
+    @State private var favoriteColorHex: String = ""
+
     var body: some View {
-        Text("Slack Settings")
+        ScrollView {
+            VStack(alignment: .leading) {
+                SlackSettingContentsView(title: "Webhook URL",
+                                         placeHolder: "https://hooks.slack...",
+                                         text: $webHookUrl,
+                                         type: .webhook)
+                SlackSettingContentsView(title: "GitHub URL",
+                                         placeHolder: "https://github.com/MilanistaDev",
+                                         text: $gitHubLink,
+                                         type: .github)
+                SlackSettingContentsView(title: "Favorite Color",
+                                         placeHolder: "#009944",
+                                         text: $favoriteColorHex,
+                                         type: .favColor)
+            }
+            .navigationBarTitle(Text("Slack Settings"))
+        }
     }
 }
 
