@@ -8,7 +8,7 @@
 
 import Foundation
 
-let activityDataSet: [ActivityModel] = [
+let firstActivityDataSet: [ActivityModel] = [
     ActivityModel(name: "出社", emoji: "🏢", deletable: true),
     ActivityModel(name: "作業開始", emoji: "👨‍💻", deletable: true),
     ActivityModel(name: "お昼休憩", emoji: "🍖", deletable: true),
@@ -20,7 +20,7 @@ let activityDataSet: [ActivityModel] = [
 
 struct UserDefaultsConfig {
     // User's Activity Data. Set default Data Set.
-    @UserDefault(UserDefaultsKey.activityData, defaultValue: activityDataSet)
+    @UserDefault(UserDefaultsKey.activityData, defaultValue: firstActivityDataSet)
     static var activityData: [ActivityModel]
 }
 
