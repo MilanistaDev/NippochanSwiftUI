@@ -25,6 +25,7 @@
 		FDCA26DD22EB0C8700F2EDDF /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */; };
 		FDCA26DE22EB0C8B00F2EDDF /* SlackSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */; };
 		FDCA26DF22EB0C8E00F2EDDF /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */; };
+		FDD9012523028434009AF72E /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */; };
 		FDEFD30D22ECD4C40077A700 /* ActivityCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingsView.swift; sourceTree = "<group>"; };
 		FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
+		FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityCarouselView.swift; path = "../../../../../../System/Volumes/Data/Users/milanista/Git/NippochanSwiftUI/NippochanSwiftUI WatchKit Extension/View/ActivityCarouselView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 		FD0ECA0022E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FDD90123230283FE009AF72E /* Utils */,
 				FD85DD2522EEC8CC00A18FE7 /* Model */,
 				FDCA26D722EB0A2500F2EDDF /* View */,
 				FD0ECA0322E2A34D00DCB142 /* HostingController.swift */,
@@ -182,6 +185,14 @@
 				FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FDD90123230283FE009AF72E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD9012523028434009AF72E /* UserDefaultsWrapper.swift in Sources */,
 				FD7D821522F9EF1A003DA258 /* SlackSettingContentsView.swift in Sources */,
 				FDEFD30D22ECD4C40077A700 /* ActivityCarouselView.swift in Sources */,
 				FDCA26DC22EB0C7000F2EDDF /* SettingsView.swift in Sources */,
