@@ -37,7 +37,7 @@ struct ActivityCarouselView: View {
 #if DEBUG
 struct ActivityCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityCarouselView(activity: ActivityModel(name: "サッカー", emoji: "⚽️", deletable: true))
+        ActivityCarouselView(activity: UserDefaultsConfig.activityData.first ?? ActivityModel(name: "サッカー", emoji: "⚽️", deletable: true))
     }
 }
 #endif
