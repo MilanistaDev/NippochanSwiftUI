@@ -19,33 +19,35 @@ struct AddActivityView: View {
             VStack(alignment: .leading) {
                 Text("New Activity")
                     .font(.headline)
-                TextField("出社", text: $activityName)
-                    .foregroundColor(.gray)
-                Text("Activity's emoji?")
-                    .font(.headline)
                 HStack {
-                    TextField("🆕", text: $activityEmoji)
+                    TextField("出社", text: $activityName)
                         .foregroundColor(.gray)
-                        .frame(width: 44.0)
+                    TextField("🆕", text: $activityEmoji)
+                        .frame(width: 36.0)
+                }.padding(Edge.Set.bottom, 12.0)
+                HStack {
                     Spacer()
                     Text("Current: ")
                         .font(.footnote)
-                        .foregroundColor(.green)
+                        .foregroundColor(.yellow)
                     Text(self.activitiesCount.description)
                         .font(.body)
                 }
-                Spacer(minLength: 6.0)
+                Spacer(minLength: 4.0)
                 Button(action: {
                     self.isPresented.toggle()
                 }) {
                     Text("Register")
+                        .font(.headline)
                 }.alert(isPresented: $isPresented, content: {
-                        Alert(title: Text("Success"),
-                              message: Text("Registered new Activity."),
-                              dismissButton: Alert.Button.default(Text("OK")))
-                            })
-                    }
-                    .navigationBarTitle(Text("Add Activity"))
+                    Alert(title: Text("Success"),
+                          message: Text("Registered new Activity."),
+                          dismissButton: Alert.Button.default(Text("OK")))
+                    })
+                    .background(Color.green)
+                    .cornerRadius(10.0)
+            }
+            .navigationBarTitle(Text("Add Activity"))
         }
     }
 }
