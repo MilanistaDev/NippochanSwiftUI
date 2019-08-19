@@ -9,28 +9,44 @@
 import SwiftUI
 
 struct AddActivityView: View {
-    @State var isShown = false
+    @State var isPresented = false
     @State var activityName: String = ""
+    @State var activityEmoji: String = "🆕"
+    @State var activitiesCount = UserDefaultsConfig.activityData.count
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Input new Activity")
-                .font(.headline)
-            TextField("出社", text: $activityName)
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("New Activity")
+                    .font(.headline)
+                TextField("出社", text: $activityName)
                     .foregroundColor(.gray)
-            Text("Current: 10")
-            Spacer()
-            Button(action: {
-                self.isShown = true
-            }) {
-                Text("Register")
-            }.alert(isPresented: $isShown, content: {
-                    Alert(title: Text("Success"),
-                          message: Text("Registered new Activity."),
-                          dismissButton: Alert.Button.default(Text("OK")))
-                        })
+                Text("Activity's emoji?")
+                    .font(.headline)
+                HStack {
+                    TextField("🆕", text: $activityEmoji)
+                        .foregroundColor(.gray)
+                        .frame(width: 44.0)
+                    Spacer()
+                    Text("Current: ")
+                        .font(.footnote)
+                        .foregroundColor(.green)
+                    Text(self.activitiesCount.description)
+                        .font(.body)
                 }
-                .navigationBarTitle(Text("Add Activity"))
+                Spacer(minLength: 6.0)
+                Button(action: {
+                    self.isPresented.toggle()
+                }) {
+                    Text("Register")
+                }.alert(isPresented: $isPresented, content: {
+                        Alert(title: Text("Success"),
+                              message: Text("Registered new Activity."),
+                              dismissButton: Alert.Button.default(Text("OK")))
+                            })
+                    }
+                    .navigationBarTitle(Text("Add Activity"))
+        }
     }
 }
 
