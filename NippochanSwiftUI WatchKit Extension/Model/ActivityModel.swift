@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ActivityModel: Identifiable {
+struct ActivityModel: Codable, Identifiable {
     var id = UUID()
     var name: String
     var emoji: String
