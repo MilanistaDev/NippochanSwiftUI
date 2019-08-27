@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SendActivityView: View {
 
-    @State var activityData: [ActivityModel] = UserDefaultsConfig.activityData
+    @State var activityData: [ActivityModel] = []
 
     var body: some View {
         List {
@@ -31,6 +31,9 @@ struct SendActivityView: View {
         }
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Activity"))
+        .onAppear {
+            self.activityData = UserDefaultsConfig.activityData
+        }
     }
 }
 

@@ -12,7 +12,7 @@ struct AddActivityView: View {
     @State var isPresented = false
     @State var activityName: String = ""
     @State var activityEmoji: String = "🆕"
-    @State var activitiesCount = UserDefaultsConfig.activityData.count
+    @State var activityData: [ActivityModel] = []
 
     var body: some View {
         ScrollView {
@@ -30,12 +30,14 @@ struct AddActivityView: View {
                     Text("Current: ")
                         .font(.footnote)
                         .foregroundColor(.yellow)
-                    Text(self.activitiesCount.description)
+                    Text(self.activityData.count.description)
                         .font(.body)
                 }
                 Spacer(minLength: 4.0)
                 Button(action: {
                     self.isPresented.toggle()
+                    self.registerActivity(activityName: self.activityName,
+                                          emoji: self.activityEmoji)
                 }) {
                     Text("Register")
                         .font(.headline)
@@ -48,7 +50,20 @@ struct AddActivityView: View {
                     .cornerRadius(10.0)
             }
             .navigationBarTitle(Text("Add Activity"))
+            .onAppear {
+                self.activityData = UserDefaultsConfig.activityData
+            }
         }
+    }
+
+    private func registerActivity(activityName: String, emoji: String) {
+
+        self.activityData
+            .insert(ActivityModel(name: activityName,
+                                  emoji: activityEmoji,
+                                  deletable: true),
+                    at: self.activityData.count - 1)
+        UserDefaultsConfig.activityData = self.activityData
     }
 }
 
