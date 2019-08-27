@@ -26,7 +26,11 @@ struct SendActivityView: View {
                 }
             }
             .onDelete { index in
-                self.activityData.remove(at: index.first!)
+                // Delete activity with the exception of Settings.
+                if self.activityData[index.first!].deletable {
+                    self.activityData.remove(at: index.first!)
+                    save(activities: self.activityData)
+                }
             }
         }
         .listStyle(CarouselListStyle())
