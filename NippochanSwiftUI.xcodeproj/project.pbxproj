@@ -91,13 +91,13 @@
 		FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendActivityView.swift; sourceTree = "<group>"; };
 		FD314B842302CE1F001AAC93 /* UDConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDConfig.swift; sourceTree = "<group>"; };
 		FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingContentsView.swift; sourceTree = "<group>"; };
-		FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = "../../../../../../System/Volumes/Data/Users/milanista/Git/NippochanSwiftUI/NippochanSwiftUI WatchKit Extension/Model/ActivityModel.swift"; sourceTree = "<group>"; };
+		FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingsView.swift; sourceTree = "<group>"; };
 		FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
-		FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityCarouselView.swift; path = "../../../../../../System/Volumes/Data/Users/milanista/Git/NippochanSwiftUI/NippochanSwiftUI WatchKit Extension/View/ActivityCarouselView.swift"; sourceTree = "<group>"; };
+		FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
