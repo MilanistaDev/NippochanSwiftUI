@@ -32,7 +32,7 @@ struct SendActivityView: View {
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Activity"))
         .onAppear {
-            self.activityData = UserDefaultsConfig.activityData
+            self.activityData = loadActivityList()
         }
     }
 }

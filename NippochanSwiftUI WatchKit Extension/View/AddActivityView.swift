@@ -51,7 +51,7 @@ struct AddActivityView: View {
             }
             .navigationBarTitle(Text("Add Activity"))
             .onAppear {
-                self.activityData = UserDefaultsConfig.activityData
+                self.activityData = loadActivityList()
             }
         }
     }
@@ -63,7 +63,7 @@ struct AddActivityView: View {
                                   emoji: activityEmoji,
                                   deletable: true),
                     at: self.activityData.count - 1)
-        UserDefaultsConfig.activityData = self.activityData
+        save(activities: self.activityData)
     }
 }
 

@@ -27,3 +27,19 @@ struct UserDefaultsConfig {
 struct UserDefaultsKey {
     static let activityData = "ActivityData"
 }
+
+/// Save New Activity List
+/// - Parameter activities: New activity list
+func save(activities: [ActivityModel]) {
+    let data = activities.map { try? JSONEncoder().encode($0)}
+    UserDefaults.standard.set(data, forKey: UserDefaultsKey.activityData)
+}
+
+/// Load Latest Activity List
+func loadActivityList() -> [ActivityModel] {
+
+    guard let encodeData = UserDefaults.standard.array(forKey: UserDefaultsKey.activityData) as? [Data] else {
+        return firstActivityDataSet
+    }
+    return encodeData.map { try! JSONDecoder().decode(ActivityModel.self, from: $0) }
+}
