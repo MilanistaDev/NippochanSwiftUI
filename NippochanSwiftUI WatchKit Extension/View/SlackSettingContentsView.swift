@@ -25,7 +25,7 @@ struct SlackSettingContentsView: View {
                 Button(action: {
                     self.isPresented.toggle()
                 }) {
-                    Image("ic_help")
+                    Image(systemName: "questionmark.circle.fill")
                 }
                 .frame(width: 20.0, height: 20.0)
                 .cornerRadius(10.0)

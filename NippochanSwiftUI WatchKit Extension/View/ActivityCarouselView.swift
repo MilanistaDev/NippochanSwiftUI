@@ -20,11 +20,15 @@ struct ActivityCarouselView: View {
                     .padding(Edge.Set.top, 16.0)
                     .padding(Edge.Set.leading, 16.0)
                 Spacer()
-                Image("ic_menu")
+                Image(systemName: "ellipsis.circle.fill")
                     .resizable()
                     .frame(width: 20.0, height: 20.0, alignment: .center)
-                    .padding(Edge.Set.trailing, 8.0)
                     .scaledToFit()
+                    .padding(Edge.Set.trailing, 8.0)
+                    .onTapGesture {
+                        // TODO: Edit Function
+                        print("Hoge")
+                }
             }
             Text(activity.name)
                 .font(.headline)
