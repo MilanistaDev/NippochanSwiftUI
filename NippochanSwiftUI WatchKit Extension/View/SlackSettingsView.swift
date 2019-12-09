@@ -19,6 +19,7 @@ struct SlackSettingsView: View {
     @State private var webHookUrl: String = ""
     @State private var gitHubLink: String = ""
     @State private var favoriteColorHex: String = ""
+    @State var isPresented = false
 
     var body: some View {
         ScrollView {
@@ -35,6 +36,18 @@ struct SlackSettingsView: View {
                                          placeHolder: "#009944",
                                          text: $favoriteColorHex,
                                          type: .favColor)
+                Button(action: {
+                    self.isPresented.toggle()
+                }) {
+                    Text("SAVE")
+                        .font(.headline)
+                }.alert(isPresented: $isPresented, content: {
+                    Alert(title: Text("Success"),
+                          message: Text("The input data has been stored."),
+                          dismissButton: Alert.Button.default(Text("OK")))
+                })
+                .background(Color.green)
+                .cornerRadius(10.0)
             }
             .navigationBarTitle(Text("Slack Settings"))
         }
