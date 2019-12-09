@@ -41,11 +41,11 @@ struct AddActivityView: View {
                     self.registerActivity(activityName: self.activityName,
                                           emoji: self.activityEmoji)
                 }) {
-                    Text("Register")
+                    Text("REGISTER")
                         .font(.headline)
                 }.alert(isPresented: $isPresented, content: {
                     Alert(title: Text("Success"),
-                          message: Text("Registered new Activity."),
+                          message: Text("The new activity has been registered."),
                           dismissButton: Alert.Button.default(Text("OK")))
                     })
                     .background(Color.green)

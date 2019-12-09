@@ -26,6 +26,9 @@ struct UserDefaultsConfig {
 
 struct UserDefaultsKey {
     static let activityData = "ActivityData"
+    static let slackWebhookUrl = "SlackWebhookURL"
+    static let gitHubUrl = "GitHubURL"
+    static let favoriteColor = "FavoriteColor"
 }
 
 class UDConfig {
@@ -36,6 +39,17 @@ class UDConfig {
         UserDefaults.standard.set(data, forKey: UserDefaultsKey.activityData)
     }
 
+    /// Save Info of User Settings
+    /// - Parameters:
+    ///   - slackWebhookUrl: Slack Webhook URL
+    ///   - gitHubUrl: User's GitHub Profile Page URL
+    ///   - favoriteColor: User's favorite Color
+    func save(slackWebhookUrl: String, gitHubUrl: String, favoriteColor: String) {
+        UserDefaults.standard.set(slackWebhookUrl, forKey: UserDefaultsKey.slackWebhookUrl)
+        UserDefaults.standard.set(gitHubUrl, forKey: UserDefaultsKey.gitHubUrl)
+        UserDefaults.standard.set(favoriteColor, forKey: UserDefaultsKey.favoriteColor)
+    }
+
     /// Load Latest Activity List
     func loadActivityList() -> [ActivityModel] {
 
@@ -43,5 +57,30 @@ class UDConfig {
             return firstActivityDataSet
         }
         return encodeData.map { try! JSONDecoder().decode(ActivityModel.self, from: $0) }
+    }
+
+    /// Return Setting Info from UserDefaults
+    /// - Parameter type: SettingsType
+    func getSettingsData(type: SettingType) -> String {
+        switch type {
+        case .webhook:
+            if let webHookUrl = UserDefaults.standard.string(forKey: UserDefaultsKey.slackWebhookUrl) {
+                return webHookUrl
+            } else {
+                return ""
+            }
+        case .github:
+            if let githubUrl = UserDefaults.standard.string(forKey: UserDefaultsKey.gitHubUrl) {
+                return githubUrl
+            } else {
+                return ""
+            }
+        case .favColor:
+            if let favoriteColorCode = UserDefaults.standard.string(forKey: UserDefaultsKey.favoriteColor) {
+                return favoriteColorCode
+            } else {
+                return ""
+            }
+        }
     }
 }

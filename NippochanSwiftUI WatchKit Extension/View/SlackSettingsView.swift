@@ -15,10 +15,13 @@ enum SettingType {
 }
 
 struct SlackSettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
 
-    @State private var webHookUrl: String = ""
-    @State private var gitHubLink: String = ""
-    @State private var favoriteColorHex: String = ""
+    let udConfig = UDConfig()
+    @State private var webHookUrl: String = UDConfig().getSettingsData(type: .webhook)
+    @State private var gitHubLink: String = UDConfig().getSettingsData(type: .github)
+    @State private var favoriteColorHex: String = UDConfig().getSettingsData(type: .favColor)
+    @State private var isPresented = false
 
     var body: some View {
         ScrollView {
@@ -35,9 +38,27 @@ struct SlackSettingsView: View {
                                          placeHolder: "#009944",
                                          text: $favoriteColorHex,
                                          type: .favColor)
+                Button(action: {
+                    self.isPresented.toggle()
+                    self.udConfig.save(slackWebhookUrl: self.webHookUrl,
+                                       gitHubUrl: self.gitHubLink,
+                                       favoriteColor: self.favoriteColorHex)
+                }) {
+                    Text("SAVE")
+                        .font(.headline)
+                    }.alert(isPresented: $isPresented, content: {
+                        Alert(title: Text("Success"),
+                              message: Text("The input data has been stored."),
+                              dismissButton: Alert.Button.default(Text("OK"),
+                                                                  action: {
+                                                                    self.presentationMode.wrappedValue.dismiss()
+                              }))
+                    })
+
+                .background(Color.green)
+                .cornerRadius(10.0)
             }
-            .navigationBarTitle(Text("Slack Settings"))
-        }
+        }.navigationBarTitle(Text("Slack Settings"))
     }
 }
 
