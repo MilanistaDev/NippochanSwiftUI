@@ -26,6 +26,9 @@ struct UserDefaultsConfig {
 
 struct UserDefaultsKey {
     static let activityData = "ActivityData"
+    static let slackWebhookUrl = "SlackWebhookURL"
+    static let gitHubUrl = "GitHubURL"
+    static let favoriteColor = "FavoriteColor"
 }
 
 class UDConfig {
