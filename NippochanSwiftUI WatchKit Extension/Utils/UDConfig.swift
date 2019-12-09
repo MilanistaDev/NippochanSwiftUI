@@ -39,6 +39,17 @@ class UDConfig {
         UserDefaults.standard.set(data, forKey: UserDefaultsKey.activityData)
     }
 
+    /// Save Info of User Settings
+    /// - Parameters:
+    ///   - slackWebhookUrl: Slack Webhook URL
+    ///   - gitHubUrl: User's GitHub Profile Page URL
+    ///   - favoriteColor: User's favorite Color
+    func save(slackWebhookUrl: String, gitHubUrl: String, favoriteColor: String) {
+        UserDefaults.standard.set(slackWebhookUrl, forKey: UserDefaultsKey.slackWebhookUrl)
+        UserDefaults.standard.set(gitHubUrl, forKey: UserDefaultsKey.gitHubUrl)
+        UserDefaults.standard.set(favoriteColor, forKey: UserDefaultsKey.favoriteColor)
+    }
+
     /// Load Latest Activity List
     func loadActivityList() -> [ActivityModel] {
 

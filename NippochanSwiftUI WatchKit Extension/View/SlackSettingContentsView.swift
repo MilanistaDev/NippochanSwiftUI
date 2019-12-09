@@ -12,7 +12,7 @@ struct SlackSettingContentsView: View {
 
     var title: String
     var placeHolder: String
-    var text: Binding<String>
+    @Binding var text: String
     var type: SettingType
     @State var isPresented = false
 
@@ -33,7 +33,7 @@ struct SlackSettingContentsView: View {
                     Text(self.showDescription(type: self.type))
                 })
             }
-            TextField(placeHolder, text: text)
+            TextField(placeHolder, text: $text)
         }
     }
 
