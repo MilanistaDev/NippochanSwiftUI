@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct AddActivityView: View {
+
+    let udConfig: UDConfig = UDConfig()
     @State var isPresented = false
     @State var activityName: String = ""
     @State var activityEmoji: String = "🆕"
@@ -51,7 +53,7 @@ struct AddActivityView: View {
             }
             .navigationBarTitle(Text("Add Activity"))
             .onAppear {
-                self.activityData = loadActivityList()
+                self.activityData = self.udConfig.loadActivityList()
             }
         }
     }
@@ -63,7 +65,7 @@ struct AddActivityView: View {
                                   emoji: activityEmoji,
                                   deletable: true),
                     at: self.activityData.count - 1)
-        save(activities: self.activityData)
+        self.udConfig.save(activities: self.activityData)
     }
 }
 

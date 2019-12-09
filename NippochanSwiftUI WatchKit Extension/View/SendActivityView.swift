@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SendActivityView: View {
 
+    let udConfig: UDConfig = UDConfig()
     @State var activityData: [ActivityModel] = []
 
     var body: some View {
@@ -29,14 +30,14 @@ struct SendActivityView: View {
                 // Delete activity with the exception of Settings.
                 if self.activityData[index.first!].deletable {
                     self.activityData.remove(at: index.first!)
-                    save(activities: self.activityData)
+                    self.udConfig.save(activities: self.activityData)
                 }
             }
         }
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Activity"))
         .onAppear {
-            self.activityData = loadActivityList()
+            self.activityData = self.udConfig.loadActivityList()
         }
     }
 }
