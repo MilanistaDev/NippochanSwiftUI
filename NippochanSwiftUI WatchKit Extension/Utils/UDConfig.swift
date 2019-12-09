@@ -47,4 +47,29 @@ class UDConfig {
         }
         return encodeData.map { try! JSONDecoder().decode(ActivityModel.self, from: $0) }
     }
+
+    /// Return Setting Info from UserDefaults
+    /// - Parameter type: SettingsType
+    func getSettingsData(type: SettingType) -> String {
+        switch type {
+        case .webhook:
+            if let webHookUrl = UserDefaults.standard.string(forKey: UserDefaultsKey.slackWebhookUrl) {
+                return webHookUrl
+            } else {
+                return ""
+            }
+        case .github:
+            if let githubUrl = UserDefaults.standard.string(forKey: UserDefaultsKey.gitHubUrl) {
+                return githubUrl
+            } else {
+                return ""
+            }
+        case .favColor:
+            if let favoriteColorCode = UserDefaults.standard.string(forKey: UserDefaultsKey.favoriteColor) {
+                return favoriteColorCode
+            } else {
+                return ""
+            }
+        }
+    }
 }
