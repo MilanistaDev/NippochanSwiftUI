@@ -15,7 +15,7 @@ enum SettingType {
 }
 
 struct SlackSettingsView: View {
-     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode
 
     let udConfig = UDConfig()
     @State private var webHookUrl: String = UDConfig().getSettingsData(type: .webhook)
