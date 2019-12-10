@@ -25,6 +25,7 @@ struct SendActivityView: View {
                     Button(action: {
                         self.isPresented = true
                         // TODO: Post Activity to Slack
+                        // Use @Published isPresented, message
                     }) {
                         ActivityCarouselView(activity: activity)
                     }
