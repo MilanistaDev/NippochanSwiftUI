@@ -67,29 +67,13 @@ class UDConfig {
     func getSettingsData(type: SettingType) -> String {
         switch type {
         case .webhook:
-            if let webHookUrl = UserDefaults.standard.string(forKey: UserDefaultsKey.slackWebhookUrl) {
-                return webHookUrl
-            } else {
-                return ""
-            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKey.slackWebhookUrl) ?? ""
         case .github:
-            if let githubUrl = UserDefaults.standard.string(forKey: UserDefaultsKey.gitHubUrl) {
-                return githubUrl
-            } else {
-                return ""
-            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKey.gitHubUrl) ?? ""
         case .userName:
-            if let userName = UserDefaults.standard.string(forKey: UserDefaultsKey.userName) {
-                return userName
-            } else {
-                return ""
-            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKey.userName) ?? ""
         case .favColor:
-            if let favoriteColorCode = UserDefaults.standard.string(forKey: UserDefaultsKey.favoriteColor) {
-                return favoriteColorCode
-            } else {
-                return ""
-            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKey.favoriteColor) ?? ""
         }
     }
 }

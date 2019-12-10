@@ -41,7 +41,7 @@ struct SlackSettingsView: View {
                                          text: $userName,
                                          type: .userName)
                 SlackSettingContentsView(title: "Favorite Color",
-                                         placeHolder: "#009944",
+                                         placeHolder: "009944",
                                          text: $favoriteColorHex,
                                          type: .favColor)
                 Button(action: {
