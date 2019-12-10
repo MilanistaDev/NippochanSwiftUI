@@ -30,7 +30,10 @@ struct SlackSettingContentsView: View {
                 .frame(width: 20.0, height: 20.0)
                 .cornerRadius(10.0)
                 .sheet(isPresented: $isPresented, content: {
-                    Text(self.showDescription(type: self.type))
+                    ScrollView {
+                        Text(self.showDescription(type: self.type))
+                            .foregroundColor(self.textColor(type: self.type))
+                    }
                 })
             }
             TextField(placeHolder, text: $text)
@@ -40,11 +43,20 @@ struct SlackSettingContentsView: View {
     private func showDescription(type: SettingType) -> String {
         switch type {
         case .webhook:
-            return "Description for webhook"
+            return "※ Required\n\nEnter the URL of the Slack channel webhook you want to post.\n\nex) https: //hooks.slack ..."
         case .github:
-            return "Description for GitHub"
+            return "※ Required\n\nEnter the GitHub's account. This info replaces your profile in Slack."
+        case .userName:
+            return "※ Optional\n\nEnter your name. Your name will be the name of the Slack contributor. If not entered, the GitHub account name will be used."
         case .favColor:
-            return "Description for Favorite Color"
+            return "※ Optional\n\nEnter the color code in Hex format. This color is used as a modified color for Slack. # is unnecessary. \n\nex) 009944"
+        }
+    }
+
+    private func textColor(type: SettingType) -> Color {
+        switch type {
+        case .webhook, .github: return .yellow
+        case .userName, .favColor: return .gray
         }
     }
 }

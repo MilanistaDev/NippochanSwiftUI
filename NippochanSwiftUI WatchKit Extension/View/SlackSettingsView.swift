@@ -11,6 +11,7 @@ import SwiftUI
 enum SettingType {
     case webhook
     case github
+    case userName
     case favColor
 }
 
@@ -20,28 +21,34 @@ struct SlackSettingsView: View {
     let udConfig = UDConfig()
     @State private var webHookUrl: String = UDConfig().getSettingsData(type: .webhook)
     @State private var gitHubLink: String = UDConfig().getSettingsData(type: .github)
+    @State private var userName: String = UDConfig().getSettingsData(type: .userName)
     @State private var favoriteColorHex: String = UDConfig().getSettingsData(type: .favColor)
     @State private var isPresented = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                SlackSettingContentsView(title: "Webhook URL",
+                SlackSettingContentsView(title: "Webhook URL*",
                                          placeHolder: "https://hooks.slack...",
                                          text: $webHookUrl,
                                          type: .webhook)
-                SlackSettingContentsView(title: "GitHub URL",
-                                         placeHolder: "https://github.com/MilanistaDev",
+                SlackSettingContentsView(title: "GitHub's account*",
+                                         placeHolder: "JohnnyDev",
                                          text: $gitHubLink,
                                          type: .github)
+                SlackSettingContentsView(title: "Your Name",
+                                         placeHolder: "John Smith",
+                                         text: $userName,
+                                         type: .userName)
                 SlackSettingContentsView(title: "Favorite Color",
-                                         placeHolder: "#009944",
+                                         placeHolder: "009944",
                                          text: $favoriteColorHex,
                                          type: .favColor)
                 Button(action: {
                     self.isPresented.toggle()
                     self.udConfig.save(slackWebhookUrl: self.webHookUrl,
                                        gitHubUrl: self.gitHubLink,
+                                       userName: self.userName,
                                        favoriteColor: self.favoriteColorHex)
                 }) {
                     Text("SAVE")
@@ -51,7 +58,7 @@ struct SlackSettingsView: View {
                               message: Text("The input data has been stored."),
                               dismissButton: Alert.Button.default(Text("OK"),
                                                                   action: {
-                                                                    self.presentationMode.wrappedValue.dismiss()
+                                                                self.presentationMode.wrappedValue.dismiss()
                               }))
                     })
 
