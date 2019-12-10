@@ -28,6 +28,7 @@ struct UserDefaultsKey {
     static let activityData = "ActivityData"
     static let slackWebhookUrl = "SlackWebhookURL"
     static let gitHubUrl = "GitHubURL"
+    static let userName = "UserName"
     static let favoriteColor = "FavoriteColor"
 }
 
@@ -43,10 +44,12 @@ class UDConfig {
     /// - Parameters:
     ///   - slackWebhookUrl: Slack Webhook URL
     ///   - gitHubUrl: User's GitHub Profile Page URL
+    ///   - userName: User's Name
     ///   - favoriteColor: User's favorite Color
-    func save(slackWebhookUrl: String, gitHubUrl: String, favoriteColor: String) {
+    func save(slackWebhookUrl: String, gitHubUrl: String, userName: String, favoriteColor: String) {
         UserDefaults.standard.set(slackWebhookUrl, forKey: UserDefaultsKey.slackWebhookUrl)
         UserDefaults.standard.set(gitHubUrl, forKey: UserDefaultsKey.gitHubUrl)
+        UserDefaults.standard.set(userName, forKey: UserDefaultsKey.userName)
         UserDefaults.standard.set(favoriteColor, forKey: UserDefaultsKey.favoriteColor)
     }
 
@@ -72,6 +75,12 @@ class UDConfig {
         case .github:
             if let githubUrl = UserDefaults.standard.string(forKey: UserDefaultsKey.gitHubUrl) {
                 return githubUrl
+            } else {
+                return ""
+            }
+        case .userName:
+            if let userName = UserDefaults.standard.string(forKey: UserDefaultsKey.userName) {
+                return userName
             } else {
                 return ""
             }
