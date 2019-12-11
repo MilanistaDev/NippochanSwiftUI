@@ -12,6 +12,7 @@ struct SendActivityView: View {
 
     let udConfig: UDConfig = UDConfig()
     @State var activityData: [ActivityModel] = []
+    @State var isPresented = false
 
     var body: some View {
         List {
@@ -21,7 +22,11 @@ struct SendActivityView: View {
                         ActivityCarouselView(activity: activity)
                     }
                 } else {
-                    NavigationLink(destination: SlackSettingsView()) {
+                    Button(action: {
+                        self.isPresented = true
+                        // TODO: Post Activity to Slack
+                        // Use @Published isPresented, message
+                    }) {
                         ActivityCarouselView(activity: activity)
                     }
                 }
@@ -33,6 +38,8 @@ struct SendActivityView: View {
                     self.udConfig.save(activities: self.activityData)
                 }
             }
+        }.alert(isPresented: $isPresented) { () -> Alert in
+            Alert(title: Text("Post Completed!!"))
         }
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Activity"))
