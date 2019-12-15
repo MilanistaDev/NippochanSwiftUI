@@ -10,8 +10,6 @@ import Foundation
 
 final class PostActivity: ObservableObject {
 
-    private let watchKitIconLink = "https://user-images.githubusercontent.com/8732417/70712003-3007c600-1d26-11ea-830f-c3589ec33ebb.png"
-
     // pass these data to send activity view
     @Published var isShowDialog = false // Flag indicating whether to display the communication result as an alert
     @Published var isSuccess = false    // Flag whether the post was successful
@@ -21,32 +19,13 @@ final class PostActivity: ObservableObject {
     /// - Parameter word: User's Activity
     func post(activity: ActivityModel) {
         let webhookUrl = UDConfig().getSettingsData(type: .webhook)
-        let gitHubAccount = UDConfig().getSettingsData(type: .github)
-        var authorName = UDConfig().getSettingsData(type: .userName)
-        if authorName.isEmpty { authorName = gitHubAccount }
-        let color = UDConfig().getSettingsData(type: .favColor)  // FIXME: Need to check color code format
-        let authorProfileLink = "https://github.com/" + gitHubAccount
-        let authorProfileIcon = authorProfileLink + ".png"
 
         var request = URLRequest(url: URL(string: webhookUrl)!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        // generate data to post to slack
-        var attachmentsDic = Dictionary<String, String>()
-        attachmentsDic["color"] = color
-        attachmentsDic["author_name"] = authorName
-        attachmentsDic["author_link"] = authorProfileLink
-        attachmentsDic["author_icon"] = authorProfileIcon
-        attachmentsDic["text"] = activity.name
-        attachmentsDic["footer"] = "via  WATCH"
-        attachmentsDic["footer_icon"] = watchKitIconLink
-
-        var attachments = Array<Any>()
-        attachments.append(attachmentsDic)
-
-        var params = Dictionary<String, Any>()
-        params["attachments"] = attachments
+        // generate payload Json
+        let params = PostJsonGenerator.generate(activityName: activity.name)
 
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
