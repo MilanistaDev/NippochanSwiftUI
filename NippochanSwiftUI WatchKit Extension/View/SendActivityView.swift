@@ -10,9 +10,9 @@ import SwiftUI
 
 struct SendActivityView: View {
 
-    let udConfig: UDConfig = UDConfig()
-    @State var activityData: [ActivityModel] = []
-    @State var isPresented = false
+    let udConfig = UDConfig()
+    @State private var activityData: [ActivityModel] = []
+    @ObservedObject var postActivity = PostActivity()
 
     var body: some View {
         List {
@@ -23,9 +23,7 @@ struct SendActivityView: View {
                     }
                 } else {
                     Button(action: {
-                        self.isPresented = true
-                        // TODO: Post Activity to Slack
-                        // Use @Published isPresented, message
+                        self.postActivity.post(activity: activity)
                     }) {
                         ActivityCarouselView(activity: activity)
                     }
@@ -38,8 +36,10 @@ struct SendActivityView: View {
                     self.udConfig.save(activities: self.activityData)
                 }
             }
-        }.alert(isPresented: $isPresented) { () -> Alert in
-            Alert(title: Text("Post Completed!!"))
+        }.alert(isPresented: $postActivity.isShowDialog) { () -> Alert in
+            Alert(title: postActivity.isSuccess ? Text("Success"): Text("Failure"),
+                  message: Text(postActivity.message),
+                  dismissButton: .default(Text("OK")))
         }
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Activity"))
