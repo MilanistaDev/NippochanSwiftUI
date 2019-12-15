@@ -8,9 +8,13 @@
 
 import SwiftUI
 
-struct ActivityModel: Codable, Identifiable {
+struct ActivityModel: Codable, Identifiable, Equatable {
     var id = UUID()
     var name: String
     var emoji: String
     var deletable = false
+
+    static func ==(lhs: ActivityModel, rhs: ActivityModel) -> Bool {
+        return lhs.name == rhs.name
+    }
 }
