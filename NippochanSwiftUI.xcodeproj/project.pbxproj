@@ -20,7 +20,9 @@
 		FD0ECA1122E2A34E00DCB142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */; };
 		FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */; };
 		FD314B852302CE1F001AAC93 /* UDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD314B842302CE1F001AAC93 /* UDConfig.swift */; };
+		FD61618323A6724E001C0C6B /* PostJsonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD61618223A6724E001C0C6B /* PostJsonGenerator.swift */; };
 		FD7D821522F9EF1A003DA258 /* SlackSettingContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */; };
+		FD7FCC3B23A264D5008BEA9E /* PostActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7FCC3A23A264D5008BEA9E /* PostActivity.swift */; };
 		FD85DD2922EECA2B00A18FE7 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */; };
 		FDCA26DC22EB0C7000F2EDDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */; };
 		FDCA26DD22EB0C8700F2EDDF /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */; };
@@ -90,7 +92,9 @@
 		FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendActivityView.swift; sourceTree = "<group>"; };
 		FD314B842302CE1F001AAC93 /* UDConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDConfig.swift; sourceTree = "<group>"; };
+		FD61618223A6724E001C0C6B /* PostJsonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostJsonGenerator.swift; sourceTree = "<group>"; };
 		FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingContentsView.swift; sourceTree = "<group>"; };
+		FD7FCC3A23A264D5008BEA9E /* PostActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActivity.swift; sourceTree = "<group>"; };
 		FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		FD0ECA0022E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FD7FCC3923A2649B008BEA9E /* API */,
 				FDD90123230283FE009AF72E /* Utils */,
 				FD85DD2522EEC8CC00A18FE7 /* Model */,
 				FDCA26D722EB0A2500F2EDDF /* View */,
@@ -165,6 +170,15 @@
 				FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD7FCC3923A2649B008BEA9E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FD7FCC3A23A264D5008BEA9E /* PostActivity.swift */,
+				FD61618223A6724E001C0C6B /* PostJsonGenerator.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		FD85DD2522EEC8CC00A18FE7 /* Model */ = {
@@ -326,6 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7FCC3B23A264D5008BEA9E /* PostActivity.swift in Sources */,
+				FD61618323A6724E001C0C6B /* PostJsonGenerator.swift in Sources */,
 				FDD9012523028434009AF72E /* UserDefaultsWrapper.swift in Sources */,
 				FD7D821522F9EF1A003DA258 /* SlackSettingContentsView.swift in Sources */,
 				FDEFD30D22ECD4C40077A700 /* ActivityCarouselView.swift in Sources */,
