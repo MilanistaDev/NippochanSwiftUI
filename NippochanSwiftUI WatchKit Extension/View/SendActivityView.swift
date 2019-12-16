@@ -20,13 +20,13 @@ struct SendActivityView: View {
             ForEach(self.activityData){ activity in
                 if activity.name == "Settings" {
                     NavigationLink(destination: SettingsView()) {
-                        ActivityCarouselView(index: self.activityData.firstIndex(of: activity)!, activity: activity)
+                        ActivityCarouselView(dataIndex: self.activityData.firstIndex(of: activity)!, activity: activity)
                     }
                 } else {
                     Button(action: {
                         self.postActivity.post(activity: activity)
                     }) {
-                        ActivityCarouselView(index: self.activityData.firstIndex(of: activity)!, activity: activity)
+                        ActivityCarouselView(dataIndex: self.activityData.firstIndex(of: activity)!, activity: activity)
                     }
                 }
             }

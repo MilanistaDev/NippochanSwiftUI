@@ -11,6 +11,7 @@ import SwiftUI
 struct AddActivityView: View {
 
     let udConfig: UDConfig = UDConfig()
+    var dataIndex = -1
     @State var isPresented = false
     @State var activityName: String = ""
     @State var activityEmoji: String = "🆕"
@@ -58,13 +59,26 @@ struct AddActivityView: View {
         }
     }
 
+    /// Save activity data to User Defaults
+    /// - Parameters:
+    ///   - activityName: activity name
+    ///   - emoji: emoji for new activity
     private func registerActivity(activityName: String, emoji: String) {
-
-        self.activityData
+        // Add New Acivity.
+        if dataIndex == -1 {
+            self.activityData
             .insert(ActivityModel(name: activityName,
                                   emoji: activityEmoji,
                                   deletable: true),
                     at: self.activityData.count - 1)
+        } else {
+            // Rewrite existing data.
+            self.activityData.remove(at: self.dataIndex)
+            self.activityData.insert(ActivityModel(name: activityName,
+                                                   emoji: emoji,
+                                                   deletable: true),
+                                     at: self.dataIndex)
+        }
         self.udConfig.save(activities: self.activityData)
     }
 }
