@@ -11,6 +11,7 @@ import SwiftUI
 struct AddActivityView: View {
 
     let udConfig: UDConfig = UDConfig()
+    var dataIndex = -1
     @State var isPresented = false
     @State var activityName: String = ""
     @State var activityEmoji: String = "🆕"
@@ -19,7 +20,7 @@ struct AddActivityView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text("New Activity")
+                Text(dataIndex == -1 ? "New Activity" : "Edit Activity")
                     .font(.headline)
                 HStack {
                     TextField("出社", text: $activityName)
@@ -41,30 +42,43 @@ struct AddActivityView: View {
                     self.registerActivity(activityName: self.activityName,
                                           emoji: self.activityEmoji)
                 }) {
-                    Text("REGISTER")
+                    Text(dataIndex == -1 ? "REGISTER": "UPDATE")
                         .font(.headline)
                 }.alert(isPresented: $isPresented, content: {
                     Alert(title: Text("Success"),
-                          message: Text("The new activity has been registered."),
+                          message: Text(dataIndex == -1 ? "The new activity has been registered.": "Activity data has been updated."),
                           dismissButton: Alert.Button.default(Text("OK")))
                     })
                     .background(Color.green)
                     .cornerRadius(10.0)
             }
-            .navigationBarTitle(Text("Add Activity"))
+            .navigationBarTitle(Text(dataIndex == -1 ? "Add Activity": "Edit Activity"))
             .onAppear {
                 self.activityData = self.udConfig.loadActivityList()
             }
         }
     }
 
+    /// Save activity data to User Defaults
+    /// - Parameters:
+    ///   - activityName: activity name
+    ///   - emoji: emoji for new activity
     private func registerActivity(activityName: String, emoji: String) {
-
-        self.activityData
+        // Add New Acivity.
+        if dataIndex == -1 {
+            self.activityData
             .insert(ActivityModel(name: activityName,
                                   emoji: activityEmoji,
                                   deletable: true),
                     at: self.activityData.count - 1)
+        } else {
+            // Rewrite existing data.
+            self.activityData.remove(at: self.dataIndex)
+            self.activityData.insert(ActivityModel(name: activityName,
+                                                   emoji: emoji,
+                                                   deletable: true),
+                                     at: self.dataIndex)
+        }
         self.udConfig.save(activities: self.activityData)
     }
 }

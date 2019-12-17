@@ -12,6 +12,7 @@ struct SendActivityView: View {
 
     let udConfig = UDConfig()
     @State private var activityData: [ActivityModel] = []
+    @State private var isNotPostable = false
     @ObservedObject var postActivity = PostActivity()
 
     var body: some View {
@@ -19,13 +20,13 @@ struct SendActivityView: View {
             ForEach(self.activityData){ activity in
                 if activity.name == "Settings" {
                     NavigationLink(destination: SettingsView()) {
-                        ActivityCarouselView(activity: activity)
+                        ActivityCarouselView(dataIndex: self.activityData.firstIndex(of: activity)!, activity: activity)
                     }
                 } else {
                     Button(action: {
                         self.postActivity.post(activity: activity)
                     }) {
-                        ActivityCarouselView(activity: activity)
+                        ActivityCarouselView(dataIndex: self.activityData.firstIndex(of: activity)!, activity: activity)
                     }
                 }
             }
