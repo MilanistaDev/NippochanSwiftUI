@@ -20,7 +20,7 @@ struct AddActivityView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text("New Activity")
+                Text(dataIndex == -1 ? "New Activity" : "Edit Activity")
                     .font(.headline)
                 HStack {
                     TextField("出社", text: $activityName)
@@ -42,17 +42,17 @@ struct AddActivityView: View {
                     self.registerActivity(activityName: self.activityName,
                                           emoji: self.activityEmoji)
                 }) {
-                    Text("REGISTER")
+                    Text(dataIndex == -1 ? "REGISTER": "UPDATE")
                         .font(.headline)
                 }.alert(isPresented: $isPresented, content: {
                     Alert(title: Text("Success"),
-                          message: Text("The new activity has been registered."),
+                          message: Text(dataIndex == -1 ? "The new activity has been registered.": "Activity data has been updated."),
                           dismissButton: Alert.Button.default(Text("OK")))
                     })
                     .background(Color.green)
                     .cornerRadius(10.0)
             }
-            .navigationBarTitle(Text("Add Activity"))
+            .navigationBarTitle(Text(dataIndex == -1 ? "Add Activity": "Edit Activity"))
             .onAppear {
                 self.activityData = self.udConfig.loadActivityList()
             }
