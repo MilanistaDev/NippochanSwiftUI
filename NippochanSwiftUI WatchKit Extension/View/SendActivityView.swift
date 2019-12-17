@@ -12,7 +12,6 @@ struct SendActivityView: View {
 
     let udConfig = UDConfig()
     @State private var activityData: [ActivityModel] = []
-    @State private var isNotPostable = false
     @ObservedObject var postActivity = PostActivity()
 
     var body: some View {
