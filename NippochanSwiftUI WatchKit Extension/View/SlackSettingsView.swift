@@ -15,8 +15,9 @@ enum SettingType {
     case favColor
 }
 
+// FIXME: There is no consistency with the input value.
+// The data is not updated even if the input value is saved and the screen returns to the setting list screen and transitions to this screen again.
 struct SlackSettingsView: View {
-    @Environment(\.presentationMode) var presentationMode
 
     let udConfig = UDConfig()
     @State private var webHookUrl: String = UDConfig().getSettingsData(type: .webhook)
@@ -45,27 +46,31 @@ struct SlackSettingsView: View {
                                          text: $favoriteColorHex,
                                          type: .favColor)
                 Button(action: {
-                    self.isPresented.toggle()
-                    self.udConfig.save(slackWebhookUrl: self.webHookUrl,
-                                       gitHubUrl: self.gitHubLink,
-                                       userName: self.userName,
-                                       favoriteColor: self.favoriteColorHex)
+                    // Save inputted data
+                    self.saveData()
                 }) {
                     Text("SAVE")
                         .font(.headline)
-                    }.alert(isPresented: $isPresented, content: {
-                        Alert(title: Text("Success"),
-                              message: Text("The input data has been stored."),
-                              dismissButton: Alert.Button.default(Text("OK"),
-                                                                  action: {
-                                                                self.presentationMode.wrappedValue.dismiss()
-                              }))
-                    })
-
+                }.alert(isPresented: $isPresented, content: {
+                    Alert(title: Text("Success"),
+                          message: Text("The input data has been stored."),
+                          dismissButton: .default(Text("OK"))
+                    )
+                })
                 .background(Color.green)
                 .cornerRadius(10.0)
             }
         }.navigationBarTitle(Text("Slack Settings"))
+    }
+
+    /// Save inputted data to User Defaults
+    private func saveData() {
+        self.udConfig.save(slackWebhookUrl: self.webHookUrl,
+                           gitHubUrl: self.gitHubLink,
+                           userName: self.userName,
+                           favoriteColor: self.favoriteColorHex)
+        // After saving, show Alert.
+        self.isPresented.toggle()
     }
 }
 

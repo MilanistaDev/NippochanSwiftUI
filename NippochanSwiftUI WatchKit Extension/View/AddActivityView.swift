@@ -38,9 +38,8 @@ struct AddActivityView: View {
                 }
                 Spacer(minLength: 4.0)
                 Button(action: {
-                    self.isPresented.toggle()
-                    self.registerActivity(activityName: self.activityName,
-                                          emoji: self.activityEmoji)
+                    // Register new activity or Update activiy
+                    self.registerActivity()
                 }) {
                     Text(dataIndex == -1 ? "REGISTER": "UPDATE")
                         .font(.headline)
@@ -60,10 +59,7 @@ struct AddActivityView: View {
     }
 
     /// Save activity data to User Defaults
-    /// - Parameters:
-    ///   - activityName: activity name
-    ///   - emoji: emoji for new activity
-    private func registerActivity(activityName: String, emoji: String) {
+    private func registerActivity() {
         // Add New Acivity.
         if dataIndex == -1 {
             self.activityData
@@ -75,11 +71,12 @@ struct AddActivityView: View {
             // Rewrite existing data.
             self.activityData.remove(at: self.dataIndex)
             self.activityData.insert(ActivityModel(name: activityName,
-                                                   emoji: emoji,
+                                                   emoji: activityEmoji,
                                                    deletable: true),
                                      at: self.dataIndex)
         }
         self.udConfig.save(activities: self.activityData)
+        self.isPresented.toggle()
     }
 }
 
