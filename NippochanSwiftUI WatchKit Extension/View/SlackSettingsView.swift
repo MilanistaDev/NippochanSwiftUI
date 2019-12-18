@@ -15,8 +15,9 @@ enum SettingType {
     case favColor
 }
 
+// FIXME: There is no consistency with the input value.
+// The data is not updated even if the input value is saved and the screen returns to the setting list screen and transitions to this screen again.
 struct SlackSettingsView: View {
-    @Environment(\.presentationMode) var presentationMode
 
     let udConfig = UDConfig()
     @State private var webHookUrl: String = UDConfig().getSettingsData(type: .webhook)
@@ -53,10 +54,8 @@ struct SlackSettingsView: View {
                 }.alert(isPresented: $isPresented, content: {
                     Alert(title: Text("Success"),
                           message: Text("The input data has been stored."),
-                          dismissButton: Alert.Button.default(Text("OK"), action: {
-                            // Back to Settings List Screen.
-                            self.presentationMode.wrappedValue.dismiss()
-                          }))
+                          dismissButton: .default(Text("OK"))
+                    )
                 })
                 .background(Color.green)
                 .cornerRadius(10.0)

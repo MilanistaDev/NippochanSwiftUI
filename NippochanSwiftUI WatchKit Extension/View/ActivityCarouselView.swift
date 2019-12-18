@@ -45,6 +45,7 @@ struct ActivityCarouselView: View {
         if let dataIndex = activityData.firstIndex(of: activity) {
             return dataIndex
         } else {
+            // FIXME: After Editing, this error occur
             fatalError()
         }
     }
