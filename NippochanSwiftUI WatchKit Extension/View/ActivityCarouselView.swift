@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ActivityCarouselView: View {
 
-    let dataIndex: Int
     let activity: ActivityModel
     @State private var isPush = false
 
@@ -22,7 +21,7 @@ struct ActivityCarouselView: View {
                     .padding(Edge.Set.top, 16.0)
                     .padding(Edge.Set.leading, 16.0)
                 Spacer()
-                NavigationLink(destination: AddActivityView(dataIndex: dataIndex, activityName: activity.name, activityEmoji: activity.emoji), isActive: $isPush) {
+                NavigationLink(destination: AddActivityView(dataIndex: self.getIndex(), activityName: activity.name, activityEmoji: activity.emoji), isActive: $isPush) {
                     Image(systemName: "ellipsis.circle.fill")
                     .resizable()
                     .frame(width: 20.0, height: 20.0, alignment: .center)
@@ -39,12 +38,22 @@ struct ActivityCarouselView: View {
                 .padding(Edge.Set.leading, 18.0)
         }
     }
+
+    /// Find the corresponding data from the list and return the index
+    private func getIndex() -> Int {
+        let activityData = UDConfig().loadActivityList()
+        if let dataIndex = activityData.firstIndex(of: activity) {
+            return dataIndex
+        } else {
+            fatalError()
+        }
+    }
 }
 
 #if DEBUG
 struct ActivityCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityCarouselView(dataIndex: 0, activity: UserDefaultsConfig.activityData.first ?? ActivityModel(name: "サッカー", emoji: "⚽️", deletable: true))
+        ActivityCarouselView(activity: UserDefaultsConfig.activityData.first ?? ActivityModel(name: "サッカー", emoji: "⚽️", deletable: true))
     }
 }
 #endif

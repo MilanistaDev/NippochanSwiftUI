@@ -19,32 +19,39 @@ struct SendActivityView: View {
             ForEach(self.activityData){ activity in
                 if activity.name == "Settings" {
                     NavigationLink(destination: SettingsView()) {
-                        ActivityCarouselView(dataIndex: self.activityData.firstIndex(of: activity)!, activity: activity)
+                        ActivityCarouselView(activity: activity)
                     }
                 } else {
                     Button(action: {
+                        // Post actiity to Slack
                         self.postActivity.post(activity: activity)
                     }) {
-                        ActivityCarouselView(dataIndex: self.activityData.firstIndex(of: activity)!, activity: activity)
+                        ActivityCarouselView(activity: activity)
                     }
                 }
             }
             .onDelete { index in
                 // Delete activity with the exception of Settings.
-                if self.activityData[index.first!].deletable {
-                    self.activityData.remove(at: index.first!)
-                    self.udConfig.save(activities: self.activityData)
-                }
+                self.deleteData(dataIndex: index)
             }
         }.alert(isPresented: $postActivity.isShowDialog) { () -> Alert in
-            Alert(title: postActivity.isSuccess ? Text("Success"): Text("Failure"),
+            Alert(title: Text(postActivity.isSuccess ? "Success": "Failure"),
                   message: Text(postActivity.message),
                   dismissButton: .default(Text("OK")))
         }
         .listStyle(CarouselListStyle())
-        .navigationBarTitle(Text("Activity"))
+        .navigationBarTitle(Text("Activity List"))
         .onAppear {
             self.activityData = self.udConfig.loadActivityList()
+        }
+    }
+
+    /// Delete activity data from Activity List
+    /// - Parameter index: Index of the corresponding data of Activity List
+    private func deleteData(dataIndex: IndexSet) {
+        if self.activityData[dataIndex.first!].deletable {
+            self.activityData.remove(at: dataIndex.first!)
+            self.udConfig.save(activities: self.activityData)
         }
     }
 }
