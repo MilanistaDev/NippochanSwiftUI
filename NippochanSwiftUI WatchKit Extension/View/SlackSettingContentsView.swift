@@ -14,7 +14,7 @@ struct SlackSettingContentsView: View {
     var placeHolder: String
     @Binding var text: String
     var type: SettingType
-    @State var isPresented = false
+    @State var isPresented = false  // for help button
 
     var body: some View {
         Group {

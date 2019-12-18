@@ -45,27 +45,33 @@ struct SlackSettingsView: View {
                                          text: $favoriteColorHex,
                                          type: .favColor)
                 Button(action: {
-                    self.isPresented.toggle()
-                    self.udConfig.save(slackWebhookUrl: self.webHookUrl,
-                                       gitHubUrl: self.gitHubLink,
-                                       userName: self.userName,
-                                       favoriteColor: self.favoriteColorHex)
+                    // Save inputted data
+                    self.saveData()
                 }) {
                     Text("SAVE")
                         .font(.headline)
-                    }.alert(isPresented: $isPresented, content: {
-                        Alert(title: Text("Success"),
-                              message: Text("The input data has been stored."),
-                              dismissButton: Alert.Button.default(Text("OK"),
-                                                                  action: {
-                                                                self.presentationMode.wrappedValue.dismiss()
-                              }))
-                    })
-
+                }.alert(isPresented: $isPresented, content: {
+                    Alert(title: Text("Success"),
+                          message: Text("The input data has been stored."),
+                          dismissButton: Alert.Button.default(Text("OK"), action: {
+                            // Back to Settings List Screen.
+                            self.presentationMode.wrappedValue.dismiss()
+                          }))
+                })
                 .background(Color.green)
                 .cornerRadius(10.0)
             }
         }.navigationBarTitle(Text("Slack Settings"))
+    }
+
+    /// Save inputted data to User Defaults
+    private func saveData() {
+        self.udConfig.save(slackWebhookUrl: self.webHookUrl,
+                           gitHubUrl: self.gitHubLink,
+                           userName: self.userName,
+                           favoriteColor: self.favoriteColorHex)
+        // After saving, show Alert.
+        self.isPresented.toggle()
     }
 }
 
