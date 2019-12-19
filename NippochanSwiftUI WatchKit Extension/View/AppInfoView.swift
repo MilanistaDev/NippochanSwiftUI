@@ -12,11 +12,11 @@ struct AppInfoView: View {
     let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     var body: some View {
         VStack(alignment: .center) {
-            Text(appVersion ?? "なし")
+            Text(appVersion ?? "")
                 .font(.title)
                 .padding(Edge.Set.top, 30.0)
             Spacer()
-            Text("NippochanSwiftUI, 2019")
+            Text("Kintai-chan, 2019")
                 .font(.footnote)
                 .foregroundColor(.green)
             Text("Takuya Aso")
