@@ -23,7 +23,7 @@ struct ActivityCarouselView: View {
                     .padding(Edge.Set.top, 16.0)
                     .padding(Edge.Set.leading, 16.0)
                 Spacer()
-                NavigationLink(destination: EditActivityView(activity: $activity, dataIndex: dataIndex), isActive: $isPush) {
+                NavigationLink(destination: EditActivityView(activity: $activity, selectedDataIndex: dataIndex), isActive: $isPush) {
                     Image(systemName: "ellipsis.circle.fill")
                         .resizable()
                         .frame(width: 20.0, height: 20.0, alignment: .center)
@@ -38,17 +38,6 @@ struct ActivityCarouselView: View {
                 .font(.headline)
                 .padding(Edge.Set.bottom, 16.0)
                 .padding(Edge.Set.leading, 18.0)
-        }
-    }
-
-    /// Find the corresponding data from the list and return the index
-    private func getIndex() -> Int {
-        let activityData = UDConfig().loadActivityList()
-        if let dataIndex = activityData.firstIndex(of: activity) {
-            return dataIndex
-        } else {
-            // FIXME: After Editing, this error occur
-            fatalError()
         }
     }
 }

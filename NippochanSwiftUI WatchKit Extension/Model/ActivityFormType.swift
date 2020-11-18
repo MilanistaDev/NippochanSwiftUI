@@ -10,7 +10,7 @@ import Foundation
 
 enum ActivityFormType {
     case new
-    case edit(dataIndex: Int)   // dataIndex: List Index. For Update Activity List
+    case edit(selectedDataIndex: Int)   // selectedDataIndex: List Index. For Update Activity List
 
     struct Kind {
         var naviTitle: String
