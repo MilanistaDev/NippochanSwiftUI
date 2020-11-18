@@ -29,6 +29,7 @@
 		FDCA26DE22EB0C8B00F2EDDF /* SlackSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */; };
 		FDCA26DF22EB0C8E00F2EDDF /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */; };
 		FDD9012523028434009AF72E /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */; };
+		FDE06B3725654A0D0022FFCB /* ActivityFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE06B3625654A0D0022FFCB /* ActivityFormType.swift */; };
 		FDEFD30D22ECD4C40077A700 /* ActivityCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingsView.swift; sourceTree = "<group>"; };
 		FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		FDE06B3625654A0D0022FFCB /* ActivityFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormType.swift; sourceTree = "<group>"; };
 		FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */,
+				FDE06B3625654A0D0022FFCB /* ActivityFormType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				FDCA26DC22EB0C7000F2EDDF /* SettingsView.swift in Sources */,
 				FD314B852302CE1F001AAC93 /* UDConfig.swift in Sources */,
 				FDCA26DD22EB0C8700F2EDDF /* AddActivityView.swift in Sources */,
+				FDE06B3725654A0D0022FFCB /* ActivityFormType.swift in Sources */,
 				FD0ECA0422E2A34D00DCB142 /* HostingController.swift in Sources */,
 				FDCA26DE22EB0C8B00F2EDDF /* SlackSettingsView.swift in Sources */,
 				FDCA26DF22EB0C8E00F2EDDF /* AppInfoView.swift in Sources */,
