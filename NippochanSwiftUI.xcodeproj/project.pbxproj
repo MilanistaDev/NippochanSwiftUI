@@ -20,6 +20,7 @@
 		FD0ECA1122E2A34E00DCB142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */; };
 		FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */; };
 		FD2F9FDE25656D5E00A938A6 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F9FDD25656D5E00A938A6 /* ActivityViewModel.swift */; };
+		FD2F9FE3256578D700A938A6 /* ActivityFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F9FE2256578D700A938A6 /* ActivityFormView.swift */; };
 		FD314B852302CE1F001AAC93 /* UDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD314B842302CE1F001AAC93 /* UDConfig.swift */; };
 		FD61618323A6724E001C0C6B /* PostJsonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD61618223A6724E001C0C6B /* PostJsonGenerator.swift */; };
 		FD7D821522F9EF1A003DA258 /* SlackSettingContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */; };
@@ -95,6 +96,7 @@
 		FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendActivityView.swift; sourceTree = "<group>"; };
 		FD2F9FDD25656D5E00A938A6 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		FD2F9FE2256578D700A938A6 /* ActivityFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormView.swift; sourceTree = "<group>"; };
 		FD314B842302CE1F001AAC93 /* UDConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDConfig.swift; sourceTree = "<group>"; };
 		FD61618223A6724E001C0C6B /* PostJsonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostJsonGenerator.swift; sourceTree = "<group>"; };
 		FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingContentsView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */,
 				FDE06B42256550BF0022FFCB /* EditActivityView.swift */,
+				FD2F9FE2256578D700A938A6 /* ActivityFormView.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				FDE06B3725654A0D0022FFCB /* ActivityFormType.swift in Sources */,
 				FD0ECA0422E2A34D00DCB142 /* HostingController.swift in Sources */,
 				FDCA26DE22EB0C8B00F2EDDF /* SlackSettingsView.swift in Sources */,
+				FD2F9FE3256578D700A938A6 /* ActivityFormView.swift in Sources */,
 				FDCA26DF22EB0C8E00F2EDDF /* AppInfoView.swift in Sources */,
 				FD0ECA0822E2A34D00DCB142 /* NotificationController.swift in Sources */,
 				FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */,
