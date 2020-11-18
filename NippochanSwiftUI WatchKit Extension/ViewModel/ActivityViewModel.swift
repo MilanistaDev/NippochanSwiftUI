@@ -14,4 +14,13 @@ class ActivityViewModel: ObservableObject {
     init() {
         self.activityData = UDConfig().loadActivityList()
     }
+
+    /// Delete Activity
+    /// - Parameter dataIndex: DataIndex of List
+    func deleteActivity(dataIndex: IndexSet) {
+        if activityData[dataIndex.first!].deletable {
+            activityData.remove(at: dataIndex.first!)
+            UDConfig().save(activities: activityData)
+        }
+    }
 }

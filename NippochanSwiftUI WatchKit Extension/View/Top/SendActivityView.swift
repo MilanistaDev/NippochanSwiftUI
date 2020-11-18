@@ -10,23 +10,22 @@ import SwiftUI
 
 struct SendActivityView: View {
 
-    let udConfig = UDConfig()
-    @State private var activityData: [ActivityModel] = []
+    @ObservedObject private var activityVM = ActivityViewModel()
     @ObservedObject var postActivity = PostActivity()
 
     var body: some View {
         List {
-            ForEach(self.activityData){ activity in
-                if activity.name == "Settings" {
+            ForEach(activityVM.activityData.indices, id: \.self) { index in
+                if activityVM.activityData[index].name == "Settings" {
                     NavigationLink(destination: SettingsView()) {
-                        ActivityCarouselView(activity: activity)
+                        ActivityCarouselView(activity: $activityVM.activityData[index])
                     }
                 } else {
                     Button(action: {
                         // Post actiity to Slack
-                        self.postActivity.post(activity: activity)
+                        self.postActivity.post(activity: activityVM.activityData[index])
                     }) {
-                        ActivityCarouselView(activity: activity)
+                        ActivityCarouselView(activity: $activityVM.activityData[index])
                     }
                 }
             }
@@ -41,18 +40,12 @@ struct SendActivityView: View {
         }
         .listStyle(CarouselListStyle())
         .navigationBarTitle(Text("Activity List"))
-        .onAppear {
-            self.activityData = self.udConfig.loadActivityList()
-        }
     }
 
     /// Delete activity data from Activity List
     /// - Parameter index: Index of the corresponding data of Activity List
     private func deleteData(dataIndex: IndexSet) {
-        if self.activityData[dataIndex.first!].deletable {
-            self.activityData.remove(at: dataIndex.first!)
-            self.udConfig.save(activities: self.activityData)
-        }
+        activityVM.deleteActivity(dataIndex: dataIndex)
     }
 }
 

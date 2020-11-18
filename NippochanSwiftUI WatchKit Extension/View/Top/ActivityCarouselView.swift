@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ActivityCarouselView: View {
 
-    let activity: ActivityModel
+    @Binding var activity: ActivityModel
     @State private var isPush = false
 
     var body: some View {
@@ -54,7 +54,7 @@ struct ActivityCarouselView: View {
 #if DEBUG
 struct ActivityCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityCarouselView(activity: UserDefaultsConfig.activityData.first ?? ActivityModel(name: "サッカー", emoji: "⚽️", deletable: true))
+        ActivityCarouselView(activity: .constant(firstActivityDataSet.first!))
     }
 }
 #endif
