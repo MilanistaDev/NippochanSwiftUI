@@ -11,14 +11,15 @@ import SwiftUI
 struct EditActivityView: View {
 
     @Binding var activity: ActivityModel
+    var dataIndex: Int
 
     var body: some View {
-        ActivityFormView(activity: $activity, formType: .edit)
+        ActivityFormView(activity: $activity, formType: .edit(dataIndex: dataIndex))
     }
 }
 
 struct EditActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        EditActivityView(activity: .constant(firstActivityDataSet.first!))
+        EditActivityView(activity: .constant(firstActivityDataSet.first!), dataIndex: 0)
     }
 }

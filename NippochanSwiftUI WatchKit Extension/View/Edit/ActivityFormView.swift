@@ -37,7 +37,7 @@ struct ActivityFormView: View {
                 Spacer(minLength: 4.0)
                 Button(action: {
                     // Register new activity or Update activiy
-                    //self.updateActivity()
+                    self.updateActivity()
                 }) {
                     Text(formType.kind.buttonTitle)
                         .font(.headline)
@@ -51,6 +51,24 @@ struct ActivityFormView: View {
             }
             .navigationBarTitle(Text(formType.kind.naviTitle))
         }
+    }
+
+
+    /// Update / Add New Activity and store it to UserDefaults
+    private func updateActivity() {
+        // Get Activity List From UserDefaults
+        var activityList = UDConfig().loadActivityList()
+
+        switch formType {
+        case .new:
+            activityList.insert(activity, at: activityList.count - 1)
+        case .edit(let dataIndex):
+            // Rewrite existing data.
+            activityList.remove(at: dataIndex)
+            activityList.insert(activity, at: dataIndex)
+        }
+        UDConfig().save(activities: activityList)
+        self.isPresented.toggle()
     }
 }
 

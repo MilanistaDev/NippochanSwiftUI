@@ -11,6 +11,8 @@ import SwiftUI
 struct ActivityCarouselView: View {
 
     @Binding var activity: ActivityModel
+    var dataIndex: Int
+
     @State private var isPush = false
 
     var body: some View {
@@ -21,7 +23,7 @@ struct ActivityCarouselView: View {
                     .padding(Edge.Set.top, 16.0)
                     .padding(Edge.Set.leading, 16.0)
                 Spacer()
-                NavigationLink(destination: EditActivityView(activity: $activity), isActive: $isPush) {
+                NavigationLink(destination: EditActivityView(activity: $activity, dataIndex: dataIndex), isActive: $isPush) {
                     Image(systemName: "ellipsis.circle.fill")
                         .resizable()
                         .frame(width: 20.0, height: 20.0, alignment: .center)
@@ -54,7 +56,7 @@ struct ActivityCarouselView: View {
 #if DEBUG
 struct ActivityCarouselView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityCarouselView(activity: .constant(firstActivityDataSet.first!))
+        ActivityCarouselView(activity: .constant(firstActivityDataSet.first!), dataIndex: 0)
     }
 }
 #endif

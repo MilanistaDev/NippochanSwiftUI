@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum ActivityFormType: Int {
+enum ActivityFormType {
     case new
-    case edit
+    case edit(dataIndex: Int)   // dataIndex: List Index. For Update Activity List
 
     struct Kind {
         var naviTitle: String
