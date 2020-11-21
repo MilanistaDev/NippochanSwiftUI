@@ -56,16 +56,8 @@ struct ActivityFormView: View {
 
     /// Update / Add New Activity and store it to UserDefaults
     private func updateActivity() {
-        switch formType {
-        case .new:
-            // Insert new Activity before Settings
-            self.activityVM.activityData.insert(activity,
-                                                at: self.activityVM.activityData.count - 1)
-        case .edit(let selectedDataIndex):
-            // Rewrite existing data
-            self.activityVM.activityData[selectedDataIndex] = activity
-        }
-        UDConfig().save(activities: self.activityVM.activityData)
+        self.activityVM.updateActivityList(formType: formType,
+                                           activity: activity)
         self.isPresented.toggle()
     }
 }
