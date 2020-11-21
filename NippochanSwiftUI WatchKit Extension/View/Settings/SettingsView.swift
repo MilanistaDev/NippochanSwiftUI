@@ -12,7 +12,7 @@ struct SettingsView: View {
 
     var body: some View {
         VStack {
-            NavigationLink(destination: AddActivityView()) {
+            NavigationLink(destination: AddActivityView(activity: ActivityModel(name: "", emoji: "🆕", deletable: true))) {
                 Text("Add Activity").font(.subheadline)
             }
             NavigationLink(destination: SlackSettingsView()) {
