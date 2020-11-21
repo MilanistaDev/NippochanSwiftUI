@@ -12,7 +12,8 @@ struct AddActivityView: View {
 
     @ObservedObject var activityVM: ActivityViewModel
 
-    @State var activity: ActivityModel
+    // Model For New Activity
+    @State var activity: ActivityModel = ActivityModel(name: "", emoji: "🆕", deletable: true)
     @State var isPresented = false
 
     var body: some View {
