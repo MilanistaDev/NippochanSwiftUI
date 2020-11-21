@@ -17,8 +17,8 @@ struct SendActivityView: View {
         List {
             ForEach(activityVM.activityData.indices, id: \.self) { index in
                 if activityVM.activityData[index].name == "Settings" {
-                    NavigationLink(destination: SettingsView()) {
-                        ActivityCarouselView(activity: $activityVM.activityData[index],
+                    NavigationLink(destination: SettingsView(activityVM: self.activityVM)) {
+                        ActivityCarouselView(activityVM: self.activityVM, activity: $activityVM.activityData[index],
                                              dataIndex: index)
                     }
                 } else {
@@ -26,14 +26,14 @@ struct SendActivityView: View {
                         // Post actiity to Slack
                         self.postActivity.post(activity: activityVM.activityData[index])
                     }) {
-                        ActivityCarouselView(activity: $activityVM.activityData[index],
+                        ActivityCarouselView(activityVM: self.activityVM, activity: $activityVM.activityData[index],
                                              dataIndex: index)
                     }
                 }
             }
-            .onDelete { index in
+            .onDelete { indexSet in
                 // Delete activity with the exception of Settings.
-                self.deleteData(dataIndex: index)
+                self.deleteData(dataIndexSet: indexSet)
             }
         }.alert(isPresented: $postActivity.isShowDialog) { () -> Alert in
             Alert(title: Text(postActivity.isSuccess ? "Success": "Failure"),
@@ -46,8 +46,8 @@ struct SendActivityView: View {
 
     /// Delete activity data from Activity List
     /// - Parameter index: Index of the corresponding data of Activity List
-    private func deleteData(dataIndex: IndexSet) {
-        activityVM.deleteActivity(dataIndex: dataIndex)
+    private func deleteData(dataIndexSet: IndexSet) {
+        activityVM.deleteActivity(dataIndex: dataIndexSet)
     }
 }
 

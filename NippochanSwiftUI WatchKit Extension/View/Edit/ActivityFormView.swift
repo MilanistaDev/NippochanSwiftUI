@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ActivityFormView: View {
 
+    @ObservedObject var activityVM: ActivityViewModel
     @Binding var activity: ActivityModel
     var formType: ActivityFormType = .new
 
@@ -55,25 +56,23 @@ struct ActivityFormView: View {
 
     /// Update / Add New Activity and store it to UserDefaults
     private func updateActivity() {
-        // Get Activity List From UserDefaults
-        var activityList = UDConfig().loadActivityList()
-
         switch formType {
         case .new:
             // Insert new Activity before Settings
-            activityList.insert(activity, at: activityList.count - 1)
+            self.activityVM.activityData.insert(activity,
+                                                at: self.activityVM.activityData.count - 1)
         case .edit(let selectedDataIndex):
             // Rewrite existing data
-            activityList.remove(at: selectedDataIndex)
-            activityList.insert(activity, at: selectedDataIndex)
+            self.activityVM.activityData[selectedDataIndex] = activity
         }
-        UDConfig().save(activities: activityList)
+        UDConfig().save(activities: self.activityVM.activityData)
         self.isPresented.toggle()
     }
 }
 
 struct ActivityFormView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityFormView(activity: .constant(firstActivityDataSet.first!))
+        ActivityFormView(activityVM: ActivityViewModel(),
+                         activity: .constant(firstActivityDataSet.first!))
     }
 }

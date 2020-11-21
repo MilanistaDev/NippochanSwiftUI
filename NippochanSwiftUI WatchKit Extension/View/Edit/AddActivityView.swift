@@ -10,11 +10,14 @@ import SwiftUI
 
 struct AddActivityView: View {
 
+    @ObservedObject var activityVM: ActivityViewModel
+
     @State var activity: ActivityModel
     @State var isPresented = false
 
     var body: some View {
-        ActivityFormView(activity: $activity,
+        ActivityFormView(activityVM: self.activityVM,
+                         activity: $activity,
                          formType: .new)
     }
 }
@@ -22,7 +25,7 @@ struct AddActivityView: View {
 #if DEBUG
 struct AddActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        AddActivityView(activity: ActivityModel(name: "出社", emoji: "🏢", deletable: true))
+        AddActivityView(activityVM: ActivityViewModel(), activity: ActivityModel(name: "出社", emoji: "🏢", deletable: true))
     }
 }
 #endif
