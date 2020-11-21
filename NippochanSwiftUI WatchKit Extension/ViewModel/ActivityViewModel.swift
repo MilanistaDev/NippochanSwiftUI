@@ -33,7 +33,7 @@ class ActivityViewModel: ObservableObject {
         case .new:
             // Insert new Activity before Settings
             self.activityData.insert(activity,
-                                     at: self.activityData.count - 1)
+                                     at: self.activityData.count - 2)
         case .edit(let selectedDataIndex):
             // Update existing data
             self.activityData[selectedDataIndex] = activity
