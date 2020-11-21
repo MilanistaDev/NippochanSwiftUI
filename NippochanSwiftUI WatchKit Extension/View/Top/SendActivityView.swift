@@ -21,6 +21,11 @@ struct SendActivityView: View {
                         ActivityCarouselView(activityVM: self.activityVM,
                                              dataIndex: index)
                     }
+                } else if activityVM.activityData[index].name == "New Entry" {
+                    NavigationLink(destination: AddActivityView(activityVM: self.activityVM)) {
+                        ActivityCarouselView(activityVM: self.activityVM,
+                                             dataIndex: index)
+                    }
                 } else {
                     Button(action: {
                         // Post actiity to Slack
