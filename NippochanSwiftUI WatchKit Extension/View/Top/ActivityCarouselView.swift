@@ -37,7 +37,9 @@ struct ActivityCarouselView: View {
                         .scaledToFit()
                         .padding(Edge.Set.trailing, 8.0)
                         .onTapGesture {
-                            self.isPush.toggle()
+                            if activity != ActivityModel(name: "New Entry", emoji: "+", deletable: false) {
+                                self.isPush.toggle()
+                            }
                         }
                 }
             }
