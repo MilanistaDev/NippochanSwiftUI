@@ -11,11 +11,10 @@ import SwiftUI
 struct EditActivityView: View {
 
     @ObservedObject var activityVM: ActivityViewModel
-    @Binding var activity: ActivityModel
     var selectedDataIndex: Int
 
     var body: some View {
-        ActivityFormView(activityVM: self.activityVM, activity: $activity,
+        ActivityFormView(activityVM: self.activityVM, activity: $activityVM.activityData[selectedDataIndex],
                          formType: .edit(selectedDataIndex: selectedDataIndex))
     }
 }
@@ -23,7 +22,6 @@ struct EditActivityView: View {
 struct EditActivityView_Previews: PreviewProvider {
     static var previews: some View {
         EditActivityView(activityVM: ActivityViewModel(),
-                         activity: .constant(firstActivityDataSet.first!),
                          selectedDataIndex: 0)
     }
 }

@@ -18,7 +18,7 @@ struct SendActivityView: View {
             ForEach(activityVM.activityData.indices, id: \.self) { index in
                 if activityVM.activityData[index].name == "Settings" {
                     NavigationLink(destination: SettingsView(activityVM: self.activityVM)) {
-                        ActivityCarouselView(activityVM: self.activityVM, activity: $activityVM.activityData[index],
+                        ActivityCarouselView(activityVM: self.activityVM,
                                              dataIndex: index)
                     }
                 } else {
@@ -26,7 +26,7 @@ struct SendActivityView: View {
                         // Post actiity to Slack
                         self.postActivity.post(activity: activityVM.activityData[index])
                     }) {
-                        ActivityCarouselView(activityVM: self.activityVM, activity: $activityVM.activityData[index],
+                        ActivityCarouselView(activityVM: self.activityVM, 
                                              dataIndex: index)
                     }
                 }
