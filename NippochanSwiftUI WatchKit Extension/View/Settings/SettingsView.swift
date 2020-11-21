@@ -10,9 +10,11 @@ import SwiftUI
 
 struct SettingsView: View {
 
+    @ObservedObject var activityVM: ActivityViewModel
+
     var body: some View {
         VStack {
-            NavigationLink(destination: AddActivityView()) {
+            NavigationLink(destination: AddActivityView(activityVM: self.activityVM, activity: ActivityModel(name: "", emoji: "🆕", deletable: true))) {
                 Text("Add Activity").font(.subheadline)
             }
             NavigationLink(destination: SlackSettingsView()) {
@@ -29,7 +31,7 @@ struct SettingsView: View {
 #if DEBUG
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(activityVM: ActivityViewModel())
     }
 }
 #endif
