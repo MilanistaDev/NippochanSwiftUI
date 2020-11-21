@@ -11,14 +11,21 @@ import SwiftUI
 struct ActivityCarouselView: View {
 
     @ObservedObject var activityVM: ActivityViewModel
-    var dataIndex: Int
+    let dataIndex: Int
+    let activity: ActivityModel
 
     @State private var isPush = false
+
+    init(activityVM: ActivityViewModel, dataIndex: Int) {
+        self.activityVM = activityVM
+        self.dataIndex = dataIndex
+        self.activity = activityVM.activityData[dataIndex]
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(self.activityVM.activityData[dataIndex].emoji)
+                Text(activity.emoji)
                     .font(.largeTitle)
                     .padding(Edge.Set.top, 16.0)
                     .padding(Edge.Set.leading, 16.0)
@@ -34,7 +41,7 @@ struct ActivityCarouselView: View {
                         }
                 }
             }
-            Text(self.activityVM.activityData[dataIndex].name)
+            Text(activity.name)
                 .font(.headline)
                 .padding(Edge.Set.bottom, 16.0)
                 .padding(Edge.Set.leading, 18.0)
