@@ -17,7 +17,7 @@ struct SendActivityView: View {
         List {
             ForEach(activityVM.activityData.indices, id: \.self) { index in
                 if activityVM.activityData[index].name == "Settings" {
-                    NavigationLink(destination: SettingsView(activityVM: self.activityVM)) {
+                    NavigationLink(destination: SettingsView()) {
                         ActivityCarouselView(activityVM: self.activityVM,
                                              dataIndex: index)
                     }
