@@ -24,6 +24,20 @@ class ActivityViewModel: ObservableObject {
         }
     }
 
-    func updateActivityList() {
+    /// Update / Add Activity
+    /// - Parameters:
+    ///   - formType: edit or new entry
+    ///   - activity: Changed Activity  Or New Activity
+    func updateActivityList(formType: ActivityFormType, activity: ActivityModel) {
+        switch formType {
+        case .new:
+            // Insert new Activity before Settings
+            self.activityData.insert(activity,
+                                     at: self.activityData.count - 1)
+        case .edit(let selectedDataIndex):
+            // Update existing data
+            self.activityData[selectedDataIndex] = activity
+        }
+        UDConfig().save(activities: self.activityData)
     }
 }
