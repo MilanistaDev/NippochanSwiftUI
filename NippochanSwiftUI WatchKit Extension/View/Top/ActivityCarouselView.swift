@@ -30,17 +30,17 @@ struct ActivityCarouselView: View {
                     .padding(Edge.Set.top, 16.0)
                     .padding(Edge.Set.leading, 16.0)
                 Spacer()
-                NavigationLink(destination: EditActivityView(activityVM: self.activityVM, selectedDataIndex: dataIndex), isActive: $isPush) {
-                    Image(systemName: "ellipsis.circle.fill")
-                        .resizable()
-                        .frame(width: 20.0, height: 20.0, alignment: .center)
-                        .scaledToFit()
-                        .padding(Edge.Set.trailing, 8.0)
-                        .onTapGesture {
-                            if activity != ActivityModel(name: "New Entry", emoji: "+", deletable: false) {
+                if activity.deletable {
+                    NavigationLink(destination: EditActivityView(activityVM: self.activityVM, selectedDataIndex: dataIndex), isActive: $isPush) {
+                        Image(systemName: "ellipsis.circle.fill")
+                            .resizable()
+                            .frame(width: 20.0, height: 20.0, alignment: .center)
+                            .scaledToFit()
+                            .padding(Edge.Set.trailing, 8.0)
+                            .onTapGesture {
                                 self.isPush.toggle()
                             }
-                        }
+                    }
                 }
             }
             Text(activity.name)
