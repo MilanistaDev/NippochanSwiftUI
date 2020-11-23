@@ -16,7 +16,8 @@ let firstActivityDataSet: [ActivityModel] = [
     ActivityModel(name: "離席", emoji: "☕️", deletable: true),
     ActivityModel(name: "作業終了", emoji: "🍻", deletable: true),
     ActivityModel(name: "早退", emoji: "🕞", deletable: true),
-    ActivityModel(name: "Settings", emoji: "✍️", deletable: false)]
+    ActivityModel(name: "Settings", emoji: "✍️", deletable: false),
+    ActivityModel(name: "New Entry", emoji: "+", deletable: false)]
 
 struct UserDefaultsConfig {
     // User's Activity Data. Set default Data Set.
@@ -59,7 +60,12 @@ class UDConfig {
         guard let encodeData = UserDefaults.standard.array(forKey: UserDefaultsKey.activityData) as? [Data] else {
             return firstActivityDataSet
         }
-        return encodeData.map { try! JSONDecoder().decode(ActivityModel.self, from: $0) }
+        var activityList = encodeData.map { try! JSONDecoder().decode(ActivityModel.self, from: $0) }
+        if !activityList.contains(ActivityModel(name: "New Entry", emoji: "+", deletable: false)) {
+            activityList.append(ActivityModel(name: "New Entry", emoji: "+", deletable: false))
+            self.save(activities: activityList)
+        }
+        return activityList
     }
 
     /// Return Setting Info from UserDefaults
