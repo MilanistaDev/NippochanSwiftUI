@@ -12,9 +12,6 @@ struct SettingsView: View {
 
     var body: some View {
         VStack {
-            NavigationLink(destination: AddActivityView()) {
-                Text("Add Activity").font(.subheadline)
-            }
             NavigationLink(destination: SlackSettingsView()) {
                 Text("Slack Settings").font(.subheadline)
             }

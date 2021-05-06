@@ -19,6 +19,8 @@
 		FD0ECA0E22E2A34E00DCB142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA0D22E2A34E00DCB142 /* Assets.xcassets */; };
 		FD0ECA1122E2A34E00DCB142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECA1022E2A34E00DCB142 /* Preview Assets.xcassets */; };
 		FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */; };
+		FD2F9FDE25656D5E00A938A6 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F9FDD25656D5E00A938A6 /* ActivityViewModel.swift */; };
+		FD2F9FE3256578D700A938A6 /* ActivityFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F9FE2256578D700A938A6 /* ActivityFormView.swift */; };
 		FD314B852302CE1F001AAC93 /* UDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD314B842302CE1F001AAC93 /* UDConfig.swift */; };
 		FD61618323A6724E001C0C6B /* PostJsonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD61618223A6724E001C0C6B /* PostJsonGenerator.swift */; };
 		FD7D821522F9EF1A003DA258 /* SlackSettingContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */; };
@@ -29,6 +31,8 @@
 		FDCA26DE22EB0C8B00F2EDDF /* SlackSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */; };
 		FDCA26DF22EB0C8E00F2EDDF /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */; };
 		FDD9012523028434009AF72E /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */; };
+		FDE06B3725654A0D0022FFCB /* ActivityFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE06B3625654A0D0022FFCB /* ActivityFormType.swift */; };
+		FDE06B43256550BF0022FFCB /* EditActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE06B42256550BF0022FFCB /* EditActivityView.swift */; };
 		FDEFD30D22ECD4C40077A700 /* ActivityCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,8 @@
 		FD0ECA1222E2A34E00DCB142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0ECA1322E2A34E00DCB142 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendActivityView.swift; sourceTree = "<group>"; };
+		FD2F9FDD25656D5E00A938A6 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		FD2F9FE2256578D700A938A6 /* ActivityFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormView.swift; sourceTree = "<group>"; };
 		FD314B842302CE1F001AAC93 /* UDConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDConfig.swift; sourceTree = "<group>"; };
 		FD61618223A6724E001C0C6B /* PostJsonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostJsonGenerator.swift; sourceTree = "<group>"; };
 		FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingContentsView.swift; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 		FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackSettingsView.swift; sourceTree = "<group>"; };
 		FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		FDD9012423028434009AF72E /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		FDE06B3625654A0D0022FFCB /* ActivityFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormType.swift; sourceTree = "<group>"; };
+		FDE06B42256550BF0022FFCB /* EditActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityView.swift; sourceTree = "<group>"; };
 		FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,10 +155,11 @@
 		FD0ECA0022E2A34D00DCB142 /* NippochanSwiftUI WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FDCA26D722EB0A2500F2EDDF /* View */,
+				FD85DD2522EEC8CC00A18FE7 /* Model */,
+				FD2F9FDC2565626E00A938A6 /* ViewModel */,
 				FD7FCC3923A2649B008BEA9E /* API */,
 				FDD90123230283FE009AF72E /* Utils */,
-				FD85DD2522EEC8CC00A18FE7 /* Model */,
-				FDCA26D722EB0A2500F2EDDF /* View */,
 				FD0ECA0322E2A34D00DCB142 /* HostingController.swift */,
 				FD0ECA0522E2A34D00DCB142 /* ExtensionDelegate.swift */,
 				FD0ECA0722E2A34D00DCB142 /* NotificationController.swift */,
@@ -172,6 +181,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FD2F9FDC2565626E00A938A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD2F9FDD25656D5E00A938A6 /* ActivityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FD7FCC3923A2649B008BEA9E /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				FD85DD2822EECA2B00A18FE7 /* ActivityModel.swift */,
+				FDE06B3625654A0D0022FFCB /* ActivityFormType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,13 +210,9 @@
 		FDCA26D722EB0A2500F2EDDF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */,
-				FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */,
-				FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */,
-				FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */,
-				FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */,
-				FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */,
-				FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */,
+				FDE06B3B25654FD30022FFCB /* Top */,
+				FDE06B3D256550210022FFCB /* Edit */,
+				FDE06B3C25654FED0022FFCB /* Settings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +224,36 @@
 				FD314B842302CE1F001AAC93 /* UDConfig.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FDE06B3B25654FD30022FFCB /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				FD0ECA2322E2A7FD00DCB142 /* SendActivityView.swift */,
+				FDEFD30C22ECD4C40077A700 /* ActivityCarouselView.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		FDE06B3C25654FED0022FFCB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FDCA26DB22EB0A2F00F2EDDF /* AppInfoView.swift */,
+				FD7D821422F9EF1A003DA258 /* SlackSettingContentsView.swift */,
+				FDCA26DA22EB0A2F00F2EDDF /* SlackSettingsView.swift */,
+				FDCA26D922EB0A2F00F2EDDF /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FDE06B3D256550210022FFCB /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				FDCA26D822EB0A2F00F2EDDF /* AddActivityView.swift */,
+				FDE06B42256550BF0022FFCB /* EditActivityView.swift */,
+				FD2F9FE2256578D700A938A6 /* ActivityFormView.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,14 +389,18 @@
 				FDD9012523028434009AF72E /* UserDefaultsWrapper.swift in Sources */,
 				FD7D821522F9EF1A003DA258 /* SlackSettingContentsView.swift in Sources */,
 				FDEFD30D22ECD4C40077A700 /* ActivityCarouselView.swift in Sources */,
+				FDE06B43256550BF0022FFCB /* EditActivityView.swift in Sources */,
 				FDCA26DC22EB0C7000F2EDDF /* SettingsView.swift in Sources */,
 				FD314B852302CE1F001AAC93 /* UDConfig.swift in Sources */,
 				FDCA26DD22EB0C8700F2EDDF /* AddActivityView.swift in Sources */,
+				FDE06B3725654A0D0022FFCB /* ActivityFormType.swift in Sources */,
 				FD0ECA0422E2A34D00DCB142 /* HostingController.swift in Sources */,
 				FDCA26DE22EB0C8B00F2EDDF /* SlackSettingsView.swift in Sources */,
+				FD2F9FE3256578D700A938A6 /* ActivityFormView.swift in Sources */,
 				FDCA26DF22EB0C8E00F2EDDF /* AppInfoView.swift in Sources */,
 				FD0ECA0822E2A34D00DCB142 /* NotificationController.swift in Sources */,
 				FD0ECA2422E2A7FD00DCB142 /* SendActivityView.swift in Sources */,
+				FD2F9FDE25656D5E00A938A6 /* ActivityViewModel.swift in Sources */,
 				FD85DD2922EECA2B00A18FE7 /* ActivityModel.swift in Sources */,
 				FD0ECA0622E2A34D00DCB142 /* ExtensionDelegate.swift in Sources */,
 				FD0ECA0A22E2A34D00DCB142 /* NotificationView.swift in Sources */,
@@ -513,7 +561,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -538,7 +586,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -558,7 +606,7 @@
 				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
 				IBSC_MODULE = NippochanSwiftUI_WatchKit_Extension;
 				INFOPLIST_FILE = "NippochanSwiftUI WatchKit App/Info.plist";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -578,7 +626,7 @@
 				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
 				IBSC_MODULE = NippochanSwiftUI_WatchKit_Extension;
 				INFOPLIST_FILE = "NippochanSwiftUI WatchKit App/Info.plist";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -595,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -608,7 +656,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7M7ZGYSAKB;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ASTK.NippochanSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
