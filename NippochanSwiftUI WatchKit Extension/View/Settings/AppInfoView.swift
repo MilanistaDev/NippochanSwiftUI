@@ -19,7 +19,7 @@ struct AppInfoView: View {
             Text(appVersion ?? "")
                 .font(.title)
             Spacer()
-            Text("Kintai-chan, 2019-2020")
+            Text("Kintai-chan, 2019-2021")
                 .font(.footnote)
                 .foregroundColor(.green)
             Text("Takuya Aso")
