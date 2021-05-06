@@ -44,6 +44,9 @@ Set the icon and user name for Slack posting in this site.
 
 [https://slack.com/services/new/incoming-webhook](https://slack.com/services/new/incoming-webhook)
 
+**※ New Entry was moved to bottom of ActivityList(v1.1.0~)**  
+![Simulator Screen Shot - Apple Watch Series 6 - 44mm - 2021-05-06 at 23 33 39](https://user-images.githubusercontent.com/8732417/117316432-9107df00-aec3-11eb-858b-54ef8b7a6903.png)
+
 **6. Slack post**
 
 Finally, you can post Slack by tapping the cell on the top list screen.
@@ -53,8 +56,7 @@ Finally, you can post Slack by tapping the cell on the top list screen.
 ## Existing bugs and issues
 
 ### Bugs
-* App crashes when you return to the list screen after editing the list activity.
-* The initial value may not be updated even though you entered each item on the Slack settings screen and pressed the Save button.
+Please inform when you find bugs.
 
 ### issues
 
@@ -66,6 +68,7 @@ Finally, you can post Slack by tapping the cell on the top list screen.
 |App Version|Date|MEMO|
 |:--:|:--:|:--|
 |1.0.0|2019-12-20|v1.0.0 released.|
+|1.1.0|2021-05-06|Bug fixed.<BR>Code Refactoring.|
 
 ## Contact
 
